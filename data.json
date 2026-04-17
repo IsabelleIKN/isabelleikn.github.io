@@ -1,1 +1,606 @@
-{}
+{
+  "bulbasaur": {
+    "status": "illustration",
+    "note": ""
+  },
+  "ivysaur": {
+    "status": "illustration",
+    "note": ""
+  },
+  "venusaur": {
+    "status": "illustration",
+    "note": ""
+  },
+  "charmander": {
+    "status": "illustration",
+    "note": ""
+  },
+  "charmeleon": {
+    "status": "illustration",
+    "note": ""
+  },
+  "charizard": {
+    "status": "illustration",
+    "note": ""
+  },
+  "squirtle": {
+    "status": "illustration",
+    "note": ""
+  },
+  "wartortle": {
+    "status": "illustration",
+    "note": ""
+  },
+  "blastoise": {
+    "status": "illustration",
+    "note": ""
+  },
+  "caterpie": {
+    "status": "illustration",
+    "note": ""
+  },
+  "metapod": {
+    "status": "regular",
+    "note": ""
+  },
+  "butterfree": {
+    "status": "regular",
+    "note": ""
+  },
+  "weedle": {
+    "status": "regular",
+    "note": ""
+  },
+  "kakuna": {
+    "status": "regular",
+    "note": ""
+  },
+  "beedrill": {
+    "status": "regular",
+    "note": ""
+  },
+  "pidgey": {
+    "status": "regular",
+    "note": ""
+  },
+  "pidgeotto": {
+    "status": "regular",
+    "note": ""
+  },
+  "pidgeot": {
+    "status": "regular",
+    "note": ""
+  },
+  "rattata": {
+    "status": "regular",
+    "note": ""
+  },
+  "raticate": {
+    "status": "regular",
+    "note": ""
+  },
+  "spearow": {
+    "status": "regular",
+    "note": ""
+  },
+  "fearow": {
+    "status": "regular",
+    "note": ""
+  },
+  "ekans": {
+    "status": "regular",
+    "note": ""
+  },
+  "arbok": {
+    "status": "regular",
+    "note": ""
+  },
+  "pikachu": {
+    "status": "illustration",
+    "note": ""
+  },
+  "raichu": {
+    "status": "regular",
+    "note": ""
+  },
+  "sandshrew": {
+    "status": "regular",
+    "note": ""
+  },
+  "sandslash": {
+    "status": "regular",
+    "note": ""
+  },
+  "nidoranf": {
+    "status": "regular",
+    "note": ""
+  },
+  "nidorina": {
+    "status": "regular",
+    "note": ""
+  },
+  "nidoqueen": {
+    "status": "regular",
+    "note": ""
+  },
+  "nidoranm": {
+    "status": "regular",
+    "note": ""
+  },
+  "nidorino": {
+    "status": "regular",
+    "note": ""
+  },
+  "nidoking": {
+    "status": "regular",
+    "note": ""
+  },
+  "clefairy": {
+    "status": "regular",
+    "note": ""
+  },
+  "clefable": {
+    "status": "regular",
+    "note": ""
+  },
+  "vulpix": {
+    "status": "regular",
+    "note": ""
+  },
+  "ninetales": {
+    "status": "illustration",
+    "note": ""
+  },
+  "jigglypuff": {
+    "status": "regular",
+    "note": ""
+  },
+  "wigglytuff": {
+    "status": "regular",
+    "note": ""
+  },
+  "zubat": {
+    "status": "regular",
+    "note": ""
+  },
+  "golbat": {
+    "status": "regular",
+    "note": ""
+  },
+  "oddish": {
+    "status": "regular",
+    "note": ""
+  },
+  "gloom": {
+    "status": "regular",
+    "note": ""
+  },
+  "vileplume": {
+    "status": "regular",
+    "note": ""
+  },
+  "paras": {
+    "status": "regular",
+    "note": ""
+  },
+  "parasect": {
+    "status": "regular",
+    "note": ""
+  },
+  "venonat": {
+    "status": "regular",
+    "note": ""
+  },
+  "venomoth": {
+    "status": "regular",
+    "note": ""
+  },
+  "diglett": {
+    "status": "regular",
+    "note": ""
+  },
+  "dugtrio": {
+    "status": "regular",
+    "note": ""
+  },
+  "meowth": {
+    "status": "regular",
+    "note": ""
+  },
+  "persian": {
+    "status": "regular",
+    "note": ""
+  },
+  "psyduck": {
+    "status": "illustration",
+    "note": ""
+  },
+  "golduck": {
+    "status": "regular",
+    "note": ""
+  },
+  "mankey": {
+    "status": "regular",
+    "note": ""
+  },
+  "primeape": {
+    "status": "regular",
+    "note": ""
+  },
+  "growlithe": {
+    "status": "regular",
+    "note": ""
+  },
+  "arcanine": {
+    "status": "regular",
+    "note": ""
+  },
+  "poliwag": {
+    "status": "regular",
+    "note": ""
+  },
+  "poliwhirl": {
+    "status": "regular",
+    "note": ""
+  },
+  "poliwrath": {
+    "status": "regular",
+    "note": ""
+  },
+  "abra": {
+    "status": "regular",
+    "note": ""
+  },
+  "kadabra": {
+    "status": "regular",
+    "note": ""
+  },
+  "alakazam": {
+    "status": "regular",
+    "note": ""
+  },
+  "machop": {
+    "status": "regular",
+    "note": ""
+  },
+  "machoke": {
+    "status": "regular",
+    "note": ""
+  },
+  "machamp": {
+    "status": "regular",
+    "note": ""
+  },
+  "bellsprout": {
+    "status": "regular",
+    "note": ""
+  },
+  "weepinbell": {
+    "status": "regular",
+    "note": ""
+  },
+  "victreebel": {
+    "status": "regular",
+    "note": ""
+  },
+  "tentacool": {
+    "status": "regular",
+    "note": ""
+  },
+  "tentacruel": {
+    "status": "regular",
+    "note": ""
+  },
+  "geodude": {
+    "status": "regular",
+    "note": ""
+  },
+  "graveler": {
+    "status": "regular",
+    "note": ""
+  },
+  "golem": {
+    "status": "regular",
+    "note": ""
+  },
+  "ponyta": {
+    "status": "regular",
+    "note": ""
+  },
+  "rapidash": {
+    "status": "illustration",
+    "note": ""
+  },
+  "slowpoke": {
+    "status": "regular",
+    "note": ""
+  },
+  "slowbro": {
+    "status": "regular",
+    "note": ""
+  },
+  "magnemite": {
+    "status": "regular",
+    "note": ""
+  },
+  "magneton": {
+    "status": "regular",
+    "note": ""
+  },
+  "farfetch-d": {
+    "status": "regular",
+    "note": ""
+  },
+  "doduo": {
+    "status": "regular",
+    "note": ""
+  },
+  "dodrio": {
+    "status": "regular",
+    "note": ""
+  },
+  "seel": {
+    "status": "regular",
+    "note": ""
+  },
+  "dewgong": {
+    "status": "regular",
+    "note": ""
+  },
+  "grimer": {
+    "status": "regular",
+    "note": ""
+  },
+  "muk": {
+    "status": "regular",
+    "note": ""
+  },
+  "shellder": {
+    "status": "regular",
+    "note": ""
+  },
+  "cloyster": {
+    "status": "regular",
+    "note": ""
+  },
+  "gastly": {
+    "status": "regular",
+    "note": ""
+  },
+  "haunter": {
+    "status": "regular",
+    "note": ""
+  },
+  "gengar": {
+    "status": "regular",
+    "note": ""
+  },
+  "onix": {
+    "status": "illustration",
+    "note": ""
+  },
+  "drowzee": {
+    "status": "regular",
+    "note": ""
+  },
+  "hypno": {
+    "status": "regular",
+    "note": ""
+  },
+  "krabby": {
+    "status": "regular",
+    "note": ""
+  },
+  "kingler": {
+    "status": "regular",
+    "note": ""
+  },
+  "voltorb": {
+    "status": "regular",
+    "note": ""
+  },
+  "electrode": {
+    "status": "regular",
+    "note": ""
+  },
+  "exeggcute": {
+    "status": "regular",
+    "note": ""
+  },
+  "exeggutor": {
+    "status": "regular",
+    "note": ""
+  },
+  "cubone": {
+    "status": "regular",
+    "note": ""
+  },
+  "marowak": {
+    "status": "regular",
+    "note": ""
+  },
+  "hitmonlee": {
+    "status": "regular",
+    "note": ""
+  },
+  "hitmonchan": {
+    "status": "regular",
+    "note": ""
+  },
+  "lickitung": {
+    "status": "regular",
+    "note": ""
+  },
+  "koffing": {
+    "status": "regular",
+    "note": ""
+  },
+  "weezing": {
+    "status": "regular",
+    "note": ""
+  },
+  "rhyhorn": {
+    "status": "regular",
+    "note": ""
+  },
+  "rhydon": {
+    "status": "regular",
+    "note": ""
+  },
+  "chansey": {
+    "status": "illustration",
+    "note": ""
+  },
+  "tangela": {
+    "status": "illustration",
+    "note": ""
+  },
+  "kangaskhan": {
+    "status": "regular",
+    "note": ""
+  },
+  "horsea": {
+    "status": "illustration",
+    "note": ""
+  },
+  "seadra": {
+    "status": "regular",
+    "note": ""
+  },
+  "goldeen": {
+    "status": "regular",
+    "note": ""
+  },
+  "seaking": {
+    "status": "regular",
+    "note": ""
+  },
+  "staryu": {
+    "status": "regular",
+    "note": ""
+  },
+  "starmie": {
+    "status": "regular",
+    "note": ""
+  },
+  "mr-mime": {
+    "status": "regular",
+    "note": ""
+  },
+  "scyther": {
+    "status": "regular",
+    "note": ""
+  },
+  "jynx": {
+    "status": "regular",
+    "note": ""
+  },
+  "electabuzz": {
+    "status": "regular",
+    "note": ""
+  },
+  "magmar": {
+    "status": "regular",
+    "note": ""
+  },
+  "pinsir": {
+    "status": "regular",
+    "note": ""
+  },
+  "tauros": {
+    "status": "regular",
+    "note": ""
+  },
+  "magikarp": {
+    "status": "regular",
+    "note": ""
+  },
+  "gyarados": {
+    "status": "regular",
+    "note": ""
+  },
+  "lapras": {
+    "status": "illustration",
+    "note": ""
+  },
+  "ditto": {
+    "status": "regular",
+    "note": ""
+  },
+  "eevee": {
+    "status": "illustration",
+    "note": ""
+  },
+  "vaporeon": {
+    "status": "illustration",
+    "note": ""
+  },
+  "jolteon": {
+    "status": "illustration",
+    "note": ""
+  },
+  "flareon": {
+    "status": "illustration",
+    "note": ""
+  },
+  "porygon": {
+    "status": "regular",
+    "note": ""
+  },
+  "omanyte": {
+    "status": "regular",
+    "note": ""
+  },
+  "omastar": {
+    "status": "regular",
+    "note": ""
+  },
+  "kabuto": {
+    "status": "regular",
+    "note": ""
+  },
+  "kabutops": {
+    "status": "regular",
+    "note": ""
+  },
+  "aerodactyl": {
+    "status": "regular",
+    "note": ""
+  },
+  "snorlax": {
+    "status": "illustration",
+    "note": ""
+  },
+  "articuno": {
+    "status": "illustration",
+    "note": ""
+  },
+  "zapdos": {
+    "status": "illustration",
+    "note": ""
+  },
+  "moltres": {
+    "status": "regular",
+    "note": ""
+  },
+  "dratini": {
+    "status": "regular",
+    "note": ""
+  },
+  "dragonair": {
+    "status": "illustration",
+    "note": ""
+  },
+  "dragonite": {
+    "status": "regular",
+    "note": ""
+  },
+  "mewtwo": {
+    "status": "regular",
+    "note": ""
+  },
+  "mew": {
+    "status": "illustration",
+    "note": ""
+  }
+}
