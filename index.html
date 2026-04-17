@@ -54,6 +54,36 @@ h1{font-size:17px;font-weight:700;margin-bottom:5px}
 .ninput{width:100%;padding:6px 8px;border:1px solid var(--border);border-radius:6px;font-size:13px;resize:vertical;min-height:54px;font-family:inherit;outline:none;line-height:1.4}
 .ninput:focus{border-color:#aaa}
 .empty{padding:48px 20px;text-align:center;color:var(--muted);font-size:14px}
+/* ── Progress bar ── */
+.gen-hdr{display:flex;align-items:baseline;justify-content:space-between}
+.gen-prog{font-size:10px;color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none;white-space:nowrap}
+.prog-bar{height:3px;background:#d8d8d8;margin:0 0 0 0}
+.prog-fill{height:100%;background:var(--reg-bg);transition:width .3s}
+.prog-fill.done{background:var(--ill-bg)}
+/* ── illEx indicator & toggle ── */
+.ill-dot{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:var(--ill-bg);color:#fff;font-size:9px;font-weight:700;flex-shrink:0;vertical-align:middle}
+.ill-ex-row{display:flex;align-items:center;gap:8px;padding-bottom:8px;font-size:13px;color:var(--text);cursor:pointer}
+.ill-ex-row input{width:15px;height:15px;cursor:pointer;accent-color:var(--ill-bg);flex-shrink:0}
+/* ── View toggle ── */
+.view-toggle{display:flex;gap:4px}
+.vtbtn{padding:5px 12px;border:1px solid var(--border);border-radius:6px;background:#fff;cursor:pointer;font-size:13px;-webkit-tap-highlight-color:transparent;transition:background .12s,color .12s}
+.vtbtn.active{background:var(--text);color:#fff;border-color:var(--text)}
+.bottom-row{display:flex;gap:8px;align-items:center}
+#export-btn{flex:1}
+/* ── Grid view ── */
+.gcells{display:grid;grid-template-columns:repeat(auto-fill,minmax(70px,1fr));gap:3px;padding:8px 8px 4px}
+.gcell{border-radius:6px;padding:5px 4px 4px;cursor:pointer;-webkit-tap-highlight-color:transparent;position:relative;display:flex;flex-direction:column;align-items:center;min-height:54px;justify-content:center;user-select:none;transition:opacity .1s}
+.gcell:active{opacity:.65}
+.gcell.s-missing{background:var(--miss-bg)}
+.gcell.s-regular{background:var(--reg-bg)}
+.gcell.s-illustration{background:var(--ill-bg)}
+.gcell.rf{box-shadow:inset 0 0 0 2px rgba(120,0,220,.3)}
+.gdex{font-size:9px;font-weight:600;line-height:1;color:rgba(255,255,255,.65)}
+.gcell.s-missing .gdex{color:rgba(0,0,0,.3)}
+.gname{font-size:10px;font-weight:600;text-align:center;line-height:1.2;margin-top:2px;word-break:break-word;hyphens:auto;color:#fff;max-width:100%}
+.gcell.s-missing .gname{color:rgba(0,0,0,.55)}
+.gill{position:absolute;top:3px;right:4px;font-size:9px;color:rgba(255,255,255,.75);line-height:1}
+.gcell.s-missing .gill{color:rgba(180,90,0,.65)}
 </style>
 </head>
 <body>
@@ -62,7 +92,7 @@ h1{font-size:17px;font-weight:700;margin-bottom:5px}
   <div class="stats">
     <span>Total: <b id="st-tot">0</b></span>
     <span>Have: <b id="st-hav">0</b></span>
-    <span>Illustration: <b id="st-ill">0</b></span>
+    <span>★ <b id="st-ill">0</b> / <b id="st-ill-ex">0</b> exist</span>
   </div>
 </div>
 <div id="controls">
@@ -84,8 +114,15 @@ h1{font-size:17px;font-weight:700;margin-bottom:5px}
     <button class="fbtn" data-status="missing">Missing</button>
     <button class="fbtn" data-status="regular">Regular</button>
     <button class="fbtn" data-status="illustration">Illustration</button>
+    <button class="fbtn" data-status="missing-ill">Missing ★</button>
   </div>
-  <button id="export-btn">💾 Save &amp; Export</button>
+  <div class="bottom-row">
+    <div class="view-toggle">
+      <button class="vtbtn active" id="vt-list">☰ List</button>
+      <button class="vtbtn" id="vt-grid">⊞ Grid</button>
+    </div>
+    <button id="export-btn">💾 Save &amp; Export</button>
+  </div>
 </div>
 <div id="list"></div>
 <script>
@@ -241,7 +278,7 @@ const STATUSES=['missing','regular','illustration'];
 const ICONS={missing:'–',regular:'●',illustration:'★'};
 let state={};
 const openRows=new Set();
-let activeGen='all',activeStatus='all',sq='';
+let activeGen='all',activeStatus='all',sq='',viewMode='list';
 
 function mkId(name){
   return name.toLowerCase()
@@ -254,7 +291,7 @@ const POKEMON=ROSTER.map(([dex,name,gen,regional])=>({
   id:mkId(name),dex,name,gen,regional:regional||null
 }));
 
-function gs(id){return state[id]||{status:'missing',note:''};}
+function gs(id){return state[id]||{status:'missing',note:'',illEx:false};}
 
 function cycleStatus(id,e){
   if(e){e.stopPropagation();e.preventDefault();}
@@ -272,6 +309,18 @@ function saveNote(id,val){
   saveLocal();
 }
 
+function toggleIllEx(id,val){
+  state[id]={...gs(id),illEx:!!val};
+  saveLocal();
+  // update the dot in the row name without re-rendering
+  const dot=document.querySelector('[data-id="'+id+'"] .ill-dot');
+  if(val&&!dot){
+    const pname=document.querySelector('[data-id="'+id+'"] .pname');
+    if(pname)pname.insertAdjacentHTML('beforeend','<span class="ill-dot">★</span>');
+  } else if(!val&&dot){dot.remove();}
+  updateStats();
+}
+
 function saveLocal(){
   try{localStorage.setItem('pkdx-binder',JSON.stringify(state));}catch(_){}
 }
@@ -280,9 +329,11 @@ function updateStats(){
   const tot=POKEMON.length;
   const hav=POKEMON.filter(p=>gs(p.id).status!=='missing').length;
   const ill=POKEMON.filter(p=>gs(p.id).status==='illustration').length;
+  const illEx=POKEMON.filter(p=>gs(p.id).illEx).length;
   document.getElementById('st-tot').textContent=tot;
   document.getElementById('st-hav').textContent=hav;
   document.getElementById('st-ill').textContent=ill;
+  document.getElementById('st-ill-ex').textContent=illEx;
 }
 
 async function loadData(){
@@ -299,6 +350,7 @@ async function loadData(){
 function matches(p){
   if(sq&&!p.name.toLowerCase().includes(sq))return false;
   if(activeGen!=='all'&&p.gen!==+activeGen)return false;
+  if(activeStatus==='missing-ill') return gs(p.id).illEx&&gs(p.id).status!=='illustration';
   if(activeStatus!=='all'&&gs(p.id).status!==activeStatus)return false;
   return true;
 }
@@ -310,24 +362,65 @@ function esc(s){
 function render(){
   let html='';
   for(let g=1;g<=9;g++){
-    const base=POKEMON.filter(p=>p.gen===g&&!p.regional&&matches(p));
-    const rf=POKEMON.filter(p=>p.gen===g&&p.regional&&matches(p));
+    // All Pokémon in this gen (unfiltered) for progress stats
+    const allBase=POKEMON.filter(p=>p.gen===g&&!p.regional);
+    const allRf=POKEMON.filter(p=>p.gen===g&&p.regional);
+    const allG=[...allBase,...allRf];
+    // Filtered list for display
+    const base=allBase.filter(matches);
+    const rf=allRf.filter(matches);
     if(!base.length&&!rf.length)continue;
-    html+='<div class="gen-section"><div class="gen-hdr">Generation '+g+'</div>';
-    for(const p of [...base,...rf]){
-      const st=gs(p.id).status,note=gs(p.id).note;
-      const open=openRows.has(p.id)||!!note;
-      const dnum=p.dex?'#'+String(p.dex).padStart(4,'0'):'';
-      html+=
-        '<div class="prow'+(p.regional?' rf':'')+'" data-id="'+p.id+'">'+
-        '<div class="rmain" onclick="toggleRow(\''+p.id+'\')">'+
-        '<span class="dnum">'+dnum+'</span>'+
-        '<span class="pname">'+esc(p.name)+(p.regional?'<span class="rtag">'+p.regional+'</span>':'')+'</span>'+
-        '<button class="sbtn s-'+st+'" onclick="cycleStatus(\''+p.id+'\',event)">'+ICONS[st]+'</button>'+
-        '</div>'+
-        '<div class="nwrap'+(open?' open':'')+'" id="nw-'+p.id+'">'+
-        '<div class="ninner"><textarea class="ninput" placeholder="Notes…" oninput="saveNote(\''+p.id+'\',this.value)">'+esc(note)+'</textarea></div>'+
-        '</div></div>';
+
+    const haveN=allG.filter(p=>gs(p.id).status!=='missing').length;
+    const illExN=allG.filter(p=>gs(p.id).illEx).length;
+    const pct=allG.length?Math.round(haveN/allG.length*100):0;
+    const done=haveN===allG.length;
+
+    html+=
+      '<div class="gen-section">'+
+      '<div class="gen-hdr">Generation '+g+
+        '<span class="gen-prog">'+haveN+' / '+allG.length+(illExN?' &nbsp;★ '+illExN:'')+'</span>'+
+      '</div>'+
+      '<div class="prog-bar"><div class="prog-fill'+(done?' done':'')+'" style="width:'+pct+'%"></div></div>';
+
+    if(viewMode==='grid'){
+      html+='<div class="gcells">';
+      for(const p of [...base,...rf]){
+        const st=gs(p.id).status,illEx=gs(p.id).illEx;
+        const dnum=p.dex?'#'+String(p.dex).padStart(4,'0'):'';
+        html+=
+          '<div class="gcell s-'+st+(p.regional?' rf':'')+'" data-id="'+p.id+
+          '" onclick="cycleStatus(\''+p.id+'\',event)" title="'+esc(p.name)+'">'+
+          (illEx?'<span class="gill">★</span>':'')+
+          '<span class="gdex">'+dnum+'</span>'+
+          '<span class="gname">'+esc(p.name)+'</span>'+
+          '</div>';
+      }
+      html+='</div>';
+    } else {
+      for(const p of [...base,...rf]){
+        const st=gs(p.id).status,note=gs(p.id).note,illEx=gs(p.id).illEx;
+        const open=openRows.has(p.id)||!!note;
+        const dnum=p.dex?'#'+String(p.dex).padStart(4,'0'):'';
+        html+=
+          '<div class="prow'+(p.regional?' rf':'')+'" data-id="'+p.id+'">'+
+          '<div class="rmain" onclick="toggleRow(\''+p.id+'\')">'+
+          '<span class="dnum">'+dnum+'</span>'+
+          '<span class="pname">'+esc(p.name)+
+            (p.regional?'<span class="rtag">'+p.regional+'</span>':'')+
+            (illEx?'<span class="ill-dot">★</span>':'')+
+          '</span>'+
+          '<button class="sbtn s-'+st+'" onclick="cycleStatus(\''+p.id+'\',event)">'+ICONS[st]+'</button>'+
+          '</div>'+
+          '<div class="nwrap'+(open?' open':'')+'" id="nw-'+p.id+'">'+
+          '<div class="ninner">'+
+          '<label class="ill-ex-row">'+
+            '<input type="checkbox" '+(illEx?'checked':'')+' onchange="toggleIllEx(\''+p.id+'\',this.checked)">'+
+            ' Illustration card exists'+
+          '</label>'+
+          '<textarea class="ninput" placeholder="Notes…" oninput="saveNote(\''+p.id+'\',this.value)">'+esc(note)+'</textarea>'+
+          '</div></div></div>';
+      }
     }
     html+='</div>';
   }
@@ -368,6 +461,19 @@ document.getElementById('sf').addEventListener('click',e=>{
   render();
 });
 document.getElementById('export-btn').addEventListener('click',exportData);
+
+document.getElementById('vt-list').addEventListener('click',function(){
+  viewMode='list';
+  this.classList.add('active');
+  document.getElementById('vt-grid').classList.remove('active');
+  render();
+});
+document.getElementById('vt-grid').addEventListener('click',function(){
+  viewMode='grid';
+  this.classList.add('active');
+  document.getElementById('vt-list').classList.remove('active');
+  render();
+});
 
 loadData();
 </script>
