@@ -295,12 +295,15 @@ function gs(id){return state[id]||{status:'missing',note:'',illEx:false};}
 
 function cycleStatus(id,e){
   if(e){e.stopPropagation();e.preventDefault();}
-  const s=STATUSES;
-  const next=s[(s.indexOf(gs(id).status)+1)%s.length];
+  const next=STATUSES[(STATUSES.indexOf(gs(id).status)+1)%STATUSES.length];
   state[id]={...gs(id),status:next};
   saveLocal();
+  // list mode: update the status button
   const btn=document.querySelector('[data-id="'+id+'"] .sbtn');
   if(btn){btn.className='sbtn s-'+next;btn.textContent=ICONS[next];}
+  // grid mode: update the cell colour
+  const cell=document.querySelector('.gcell[data-id="'+id+'"]');
+  if(cell){STATUSES.forEach(s=>cell.classList.remove('s-'+s));cell.classList.add('s-'+next);}
   updateStats();
 }
 
@@ -312,7 +315,7 @@ function saveNote(id,val){
 function toggleIllEx(id,val){
   state[id]={...gs(id),illEx:!!val};
   saveLocal();
-  // update the dot in the row name without re-rendering
+  // update the ★ dot in the row name without re-rendering
   const dot=document.querySelector('[data-id="'+id+'"] .ill-dot');
   if(val&&!dot){
     const pname=document.querySelector('[data-id="'+id+'"] .pname');
