@@ -1,43 +1,53 @@
 {
   "bulbasaur": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "ivysaur": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "venusaur": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "charmander": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "charmeleon": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "charizard": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "squirtle": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "wartortle": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "blastoise": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "caterpie": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "metapod": {
     "status": "regular",
@@ -61,15 +71,18 @@
   },
   "pidgey": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "pidgeotto": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "pidgeot": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "rattata": {
     "status": "regular",
@@ -77,15 +90,18 @@
   },
   "raticate": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "spearow": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "fearow": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "ekans": {
     "status": "regular",
@@ -93,15 +109,18 @@
   },
   "arbok": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "pikachu": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "raichu": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "sandshrew": {
     "status": "regular",
@@ -132,12 +151,14 @@
     "note": ""
   },
   "nidoking": {
-    "status": "regular",
-    "note": ""
+    "status": "illustration",
+    "note": "",
+    "illEx": true
   },
   "clefairy": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "clefable": {
     "status": "regular",
@@ -145,11 +166,13 @@
   },
   "vulpix": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "ninetales": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "jigglypuff": {
     "status": "regular",
@@ -157,7 +180,8 @@
   },
   "wigglytuff": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "zubat": {
     "status": "regular",
@@ -173,7 +197,8 @@
   },
   "gloom": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "vileplume": {
     "status": "regular",
@@ -189,11 +214,13 @@
   },
   "venonat": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": false
   },
   "venomoth": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "diglett": {
     "status": "regular",
@@ -201,19 +228,23 @@
   },
   "dugtrio": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "meowth": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "persian": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "psyduck": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "golduck": {
     "status": "regular",
@@ -241,7 +272,8 @@
   },
   "poliwhirl": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "poliwrath": {
     "status": "regular",
@@ -257,15 +289,17 @@
   },
   "alakazam": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "machop": {
     "status": "regular",
     "note": ""
   },
   "machoke": {
-    "status": "regular",
-    "note": ""
+    "status": "illustration",
+    "note": "",
+    "illEx": true
   },
   "machamp": {
     "status": "regular",
@@ -285,7 +319,8 @@
   },
   "tentacool": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "tentacruel": {
     "status": "regular",
@@ -309,11 +344,13 @@
   },
   "rapidash": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "slowpoke": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "slowbro": {
     "status": "regular",
@@ -321,7 +358,8 @@
   },
   "magnemite": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "magneton": {
     "status": "regular",
@@ -345,7 +383,8 @@
   },
   "dewgong": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "grimer": {
     "status": "regular",
@@ -365,23 +404,28 @@
   },
   "gastly": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "haunter": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "gengar": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "onix": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "drowzee": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "hypno": {
     "status": "regular",
@@ -405,11 +449,13 @@
   },
   "exeggcute": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "exeggutor": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "cubone": {
     "status": "regular",
@@ -429,7 +475,8 @@
   },
   "lickitung": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "koffing": {
     "status": "regular",
@@ -437,7 +484,8 @@
   },
   "weezing": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "rhyhorn": {
     "status": "regular",
@@ -448,20 +496,24 @@
     "note": ""
   },
   "chansey": {
-    "status": "illustration",
-    "note": ""
+    "status": "regular",
+    "note": "",
+    "illEx": true
   },
   "tangela": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "kangaskhan": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "horsea": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "seadra": {
     "status": "regular",
@@ -481,11 +533,13 @@
   },
   "starmie": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "mr-mime": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "scyther": {
     "status": "regular",
@@ -493,7 +547,8 @@
   },
   "jynx": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "electabuzz": {
     "status": "regular",
@@ -505,7 +560,8 @@
   },
   "pinsir": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "tauros": {
     "status": "regular",
@@ -513,7 +569,8 @@
   },
   "magikarp": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "gyarados": {
     "status": "regular",
@@ -525,23 +582,28 @@
   },
   "ditto": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "eevee": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "vaporeon": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "jolteon": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "flareon": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "porygon": {
     "status": "regular",
@@ -549,7 +611,8 @@
   },
   "omanyte": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "omastar": {
     "status": "regular",
@@ -565,23 +628,28 @@
   },
   "aerodactyl": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "snorlax": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "articuno": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "zapdos": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "moltres": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "dratini": {
     "status": "regular",
@@ -589,18 +657,107 @@
   },
   "dragonair": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "dragonite": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "mewtwo": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "mew": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
+  },
+  "galarian-rapidash": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "galarian-ponyta": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "hisuian-voltorb": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "paldean-tauros-combat": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "galarian-articuno": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "galarian-zapdos": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "galarian-moltres": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "alolan-dugtrio": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "galarian-mr-mime": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "galarian-slowking": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "hisuian-growlithe": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "hisuian-typhlosion": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "hisuian-sneasel": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "hisuian-arcanine": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "hisuian-samurott": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "hisuian-zoroark": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "hisuian-goodra": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
   }
 }
