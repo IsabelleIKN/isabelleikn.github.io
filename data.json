@@ -67,7 +67,8 @@
   },
   "beedrill": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "pidgey": {
     "status": "regular",
