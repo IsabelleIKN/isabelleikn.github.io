@@ -291,6 +291,18 @@ const POKEMON=ROSTER.map(([dex,name,gen,regional])=>({
   id:mkId(name),dex,name,gen,regional:regional||null
 }));
 
+// Precompute base-Pokémon dex for each regional form (for sorting)
+const RORDER=['Alolan','Galarian','Hisuian','Paldean'];
+const BASE_DEX={};
+for(const p of POKEMON){
+  if(!p.regional)continue;
+  const baseName=p.name
+    .replace(/^(?:Alolan|Galarian|Hisuian|Paldean)\s+/,'')
+    .replace(/\s*\(.*\)$/,'');
+  const base=POKEMON.find(q=>!q.regional&&q.name===baseName);
+  BASE_DEX[p.id]=base?base.dex:9999;
+}
+
 function gs(id){return state[id]||{status:'missing',note:'',illEx:false};}
 
 function cycleStatus(id,e){
@@ -371,7 +383,10 @@ function render(){
     const allG=[...allBase,...allRf];
     // Filtered list for display
     const base=allBase.filter(matches);
-    const rf=allRf.filter(matches);
+    const rf=allRf.filter(matches).sort((a,b)=>{
+      const rd=RORDER.indexOf(a.regional)-RORDER.indexOf(b.regional);
+      return rd!==0?rd:BASE_DEX[a.id]-BASE_DEX[b.id];
+    });
     if(!base.length&&!rf.length)continue;
 
     const haveN=allG.filter(p=>gs(p.id).status!=='missing').length;
