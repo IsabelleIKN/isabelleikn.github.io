@@ -747,7 +747,7 @@
     "illEx": true
   },
   "hisuian-sneasel": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -1749,6 +1749,16 @@
   "meganium": {
     "status": "missing",
     "note": "mega ex",
+    "illEx": true
+  },
+  "hisuian-qwilfish": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "sneasler": {
+    "status": "missing",
+    "note": "hisuian",
     "illEx": true
   }
 }
