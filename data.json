@@ -163,7 +163,8 @@
   },
   "clefable": {
     "status": "regular",
-    "note": ""
+    "note": "mega ex",
+    "illEx": true
   },
   "vulpix": {
     "status": "regular",
@@ -203,15 +204,18 @@
   },
   "vileplume": {
     "status": "regular",
-    "note": ""
+    "note": "GX",
+    "illEx": true
   },
   "paras": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "parasect": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "venonat": {
     "status": "regular",
@@ -220,7 +224,7 @@
   },
   "venomoth": {
     "status": "regular",
-    "note": "",
+    "note": "GX",
     "illEx": true
   },
   "diglett": {
@@ -229,7 +233,7 @@
   },
   "dugtrio": {
     "status": "regular",
-    "note": "",
+    "note": "Team Rockets",
     "illEx": true
   },
   "meowth": {
@@ -304,7 +308,8 @@
   },
   "machamp": {
     "status": "regular",
-    "note": ""
+    "note": "V",
+    "illEx": true
   },
   "bellsprout": {
     "status": "regular",
@@ -320,7 +325,7 @@
   },
   "tentacool": {
     "status": "regular",
-    "note": "",
+    "note": "full art",
     "illEx": true
   },
   "tentacruel": {
@@ -376,7 +381,8 @@
   },
   "dodrio": {
     "status": "regular",
-    "note": ""
+    "note": "V",
+    "illEx": true
   },
   "seel": {
     "status": "regular",
@@ -438,7 +444,8 @@
   },
   "kingler": {
     "status": "regular",
-    "note": ""
+    "note": "V",
+    "illEx": true
   },
   "voltorb": {
     "status": "regular",
@@ -481,7 +488,8 @@
   },
   "koffing": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "weezing": {
     "status": "regular",
@@ -497,7 +505,7 @@
     "note": ""
   },
   "chansey": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -534,7 +542,7 @@
   },
   "starmie": {
     "status": "regular",
-    "note": "",
+    "note": "V w misty",
     "illEx": true
   },
   "mr-mime": {
@@ -575,11 +583,13 @@
   },
   "gyarados": {
     "status": "regular",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "lapras": {
     "status": "illustration",
-    "note": ""
+    "note": "",
+    "illEx": true
   },
   "ditto": {
     "status": "regular",
@@ -712,7 +722,7 @@
     "illEx": true
   },
   "alolan-dugtrio": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -759,6 +769,986 @@
   "hisuian-goodra": {
     "status": "missing",
     "note": "",
+    "illEx": true
+  },
+  "ribombee": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "natu": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "xatu": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "unown": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "slugma": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "magcargo": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "quilava": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "litleo": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "houndoom": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "houndstone": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "floette": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "florges": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "flabebe": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "ralts": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "kirlia": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "gardevoir": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "greavard": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "indeedee": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "chimecho": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "banette": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "duskull": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "dusclops": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "dedenne": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "fidough": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "dachsbun": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "drifblim": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "drifloon": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "spritzee": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "flittle": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "espathra": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "iron-valiant": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "smoochum": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "girafarig": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "wobbuffet": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "lugia": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "capsakid": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "scovillain": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "smoliv": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "dolliv": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "cacnea": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "cacturne": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "scatterbug": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "spewpa": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "vivillon": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "snom": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "meowscarada": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "dipplin": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "heracross": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "breloom": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "orbeetle": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "blipbug": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "gossifleur": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "cottonee": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "whimsicott": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "tarountula": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "budew": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "deerling": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "klinklang": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "klink": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "spinarak": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "pineco": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "wooper": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "paldean-wooper": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "mareep": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "larvitar": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "skiploom": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "forretress": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "alolan-golem": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "floragato": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "rookidee": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "lotad": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "tropius": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "zorua": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "escavalier": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "karrablast": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "nymble": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "metang": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "combusken": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "magmortar": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "darmanitan": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "meditite": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "pupitar": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "combee": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "glimmet": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "frigibax": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "arctibax": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "gothitelle": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "zweilous": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "kecleon": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "rockruff": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "tympole": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "darumaka": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "lunatone": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "gothita": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "skarmory": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "beldum": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "komala": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "shinx": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "falinks": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "gurdurr": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "misdreavus": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "togedemaru": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "togekiss": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "togetic": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "meltan": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "elgyem": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "nuzleaf": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "cramorant": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "pangoro": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "dubwool": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "copperajah": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "slakoth": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "electivire": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "riolu": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "furret": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "squawkabilly": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "toedscool": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "toedscruel": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "maractus": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "cinccino": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "druddigon": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "duosion": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "rufflet": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "wugtrio": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "salamence": {
+    "status": "missing",
+    "note": "EX",
+    "illEx": true
+  },
+  "salazzle": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "salandit": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "morelull": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "stunfisk": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "froakie": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "surskit": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "tynamo": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "eelektrik": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "eelektross": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "talonflame": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "fletchinder": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "fletchling": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "houndour": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "teddiursa": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "mantine": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "sneasel": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "swinub": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "piloswine": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "remoraid": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "octillery": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "phanpy": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "delibird": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "porygon-z": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "stantler": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "tyranitar": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "suicune": {
+    "status": "regular",
+    "note": "V",
+    "illEx": true
+  },
+  "entei": {
+    "status": "missing",
+    "note": "V",
+    "illEx": true
+  },
+  "raikou": {
+    "status": "missing",
+    "note": "V",
+    "illEx": true
+  },
+  "blissey": {
+    "status": "illustration",
+    "note": "V",
+    "illEx": true
+  },
+  "miltank": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "magby": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "hitmontop": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "smeargle": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "ho-oh": {
+    "status": "missing",
+    "note": "Ethan's EX",
+    "illEx": true
+  },
+  "celebi": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "kingdra": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "umbreon": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "espeon": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "shuckle": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "scizor": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "qwilfish": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "granbull": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "snubbull": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "steelix": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "gligar": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "dunsparce": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "slowking": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "murkrow": {
+    "status": "regular",
+    "note": "Team Rocket",
+    "illEx": true
+  },
+  "quagsire": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "yanma": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "sunflora": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "sunkern": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "aipom": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "sudowoodo": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "marill": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "azumarill": {
+    "status": "missing",
+    "note": "Full art",
+    "illEx": true
+  },
+  "flaaffy": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "cleffa": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "igglybuff": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "lanturn": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "chinchou": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "crobat": {
+    "status": "missing",
+    "note": "Team Rocket EX or V",
+    "illEx": true
+  },
+  "ariados": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "ledian": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "noctowl": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "hoothoot": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "feraligatr": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "totodile": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "typhlosion": {
+    "status": "missing",
+    "note": "Ethans",
+    "illEx": true
+  },
+  "chikorita": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "meganium": {
+    "status": "missing",
+    "note": "mega ex",
     "illEx": true
   }
 }
