@@ -109,7 +109,7 @@
     "note": ""
   },
   "arbok": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -354,7 +354,7 @@
     "illEx": true
   },
   "slowpoke": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -621,7 +621,7 @@
     "note": ""
   },
   "omanyte": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -852,7 +852,7 @@
     "illEx": true
   },
   "greavard": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1017,7 +1017,7 @@
     "illEx": false
   },
   "orbeetle": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1087,7 +1087,7 @@
     "illEx": true
   },
   "mareep": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1217,7 +1217,7 @@
     "illEx": true
   },
   "rockruff": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1367,7 +1367,7 @@
     "illEx": true
   },
   "cinccino": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1442,12 +1442,12 @@
     "illEx": true
   },
   "talonflame": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
   "fletchinder": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1517,7 +1517,7 @@
     "illEx": false
   },
   "tyranitar": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1677,7 +1677,7 @@
     "illEx": true
   },
   "flaaffy": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1702,12 +1702,12 @@
     "illEx": false
   },
   "crobat": {
-    "status": "missing",
+    "status": "illustration",
     "note": "Team Rocket EX or V",
     "illEx": true
   },
   "ariados": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1717,7 +1717,7 @@
     "illEx": true
   },
   "noctowl": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1759,6 +1759,161 @@
   "sneasler": {
     "status": "missing",
     "note": "hisuian",
+    "illEx": true
+  },
+  "glaceon": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "leafeon": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "sylveon": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "spectrier": {
+    "status": "illustration",
+    "note": "Shadowrider Calyrex?",
+    "illEx": true
+  },
+  "glastrier": {
+    "status": "illustration",
+    "note": "Icerider Calyrex?",
+    "illEx": true
+  },
+  "mudsdale": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "zebstrika": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "keldeo": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "skeledirge": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "sawsbuck": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "sentret": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "wattrel": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "wailord": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "mantyke": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "swablu": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "starly": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "wooloo": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "castform": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "drampa": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "grotle": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "minccino": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "appletun": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "pawmi": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "maushold": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "lechonk": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "stoutland": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "mimikyu": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "milotic": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "kricketune": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "applin": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "oranguru": {
+    "status": "illustration",
+    "note": "",
     "illEx": true
   }
 }
