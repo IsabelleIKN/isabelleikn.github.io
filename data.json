@@ -95,8 +95,8 @@
     "illEx": true
   },
   "spearow": {
-    "status": "regular",
-    "note": "",
+    "status": "illustration",
+    "note": "Japanese",
     "illEx": true
   },
   "fearow": {
@@ -167,8 +167,8 @@
     "illEx": true
   },
   "vulpix": {
-    "status": "regular",
-    "note": "",
+    "status": "illustration",
+    "note": "Duits",
     "illEx": true
   },
   "ninetales": {
@@ -181,8 +181,8 @@
     "note": ""
   },
   "wigglytuff": {
-    "status": "regular",
-    "note": "",
+    "status": "illustration",
+    "note": "Duits",
     "illEx": true
   },
   "zubat": {
@@ -232,8 +232,8 @@
     "note": ""
   },
   "dugtrio": {
-    "status": "regular",
-    "note": "Team Rockets",
+    "status": "illustration",
+    "note": "Team Rockets - Duits",
     "illEx": true
   },
   "meowth": {
@@ -390,7 +390,7 @@
   },
   "dewgong": {
     "status": "regular",
-    "note": "",
+    "note": "Japanese",
     "illEx": true
   },
   "grimer": {
@@ -573,8 +573,9 @@
     "illEx": true
   },
   "tauros": {
-    "status": "regular",
-    "note": ""
+    "status": "illustration",
+    "note": "Japanese",
+    "illEx": true
   },
   "magikarp": {
     "status": "regular",
@@ -807,8 +808,8 @@
     "illEx": false
   },
   "litleo": {
-    "status": "regular",
-    "note": "",
+    "status": "illustration",
+    "note": "Duits",
     "illEx": true
   },
   "houndoom": {
@@ -987,8 +988,8 @@
     "illEx": true
   },
   "vivillon": {
-    "status": "regular",
-    "note": "",
+    "status": "illustration",
+    "note": "Duits",
     "illEx": true
   },
   "snom": {
@@ -1277,13 +1278,13 @@
     "illEx": true
   },
   "togedemaru": {
-    "status": "regular",
-    "note": "",
+    "status": "illustration",
+    "note": "Japanese",
     "illEx": true
   },
   "togekiss": {
-    "status": "missing",
-    "note": "",
+    "status": "illustration",
+    "note": "Japanese",
     "illEx": true
   },
   "togetic": {
@@ -1502,7 +1503,7 @@
     "illEx": true
   },
   "delibird": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1914,6 +1915,71 @@
   "oranguru": {
     "status": "illustration",
     "note": "",
+    "illEx": true
+  },
+  "snorunt": {
+    "status": "illustration",
+    "note": "Japanese",
+    "illEx": true
+  },
+  "beautifly": {
+    "status": "illustration",
+    "note": "Japanese",
+    "illEx": true
+  },
+  "numel": {
+    "status": "illustration",
+    "note": "Japanese",
+    "illEx": true
+  },
+  "piplup": {
+    "status": "illustration",
+    "note": "Japanese",
+    "illEx": true
+  },
+  "flygon": {
+    "status": "illustration",
+    "note": "Japanese",
+    "illEx": true
+  },
+  "crustle": {
+    "status": "illustration",
+    "note": "Better exists",
+    "illEx": true
+  },
+  "tyrunt": {
+    "status": "illustration",
+    "note": "Duits",
+    "illEx": true
+  },
+  "spheal": {
+    "status": "illustration",
+    "note": "Duits",
+    "illEx": true
+  },
+  "slurpuff": {
+    "status": "illustration",
+    "note": "Duits",
+    "illEx": true
+  },
+  "tinkatuff": {
+    "status": "illustration",
+    "note": "Duits",
+    "illEx": true
+  },
+  "yamper": {
+    "status": "illustration",
+    "note": "Duits",
+    "illEx": true
+  },
+  "zacian": {
+    "status": "illustration",
+    "note": "Duits",
+    "illEx": true
+  },
+  "raboot": {
+    "status": "illustration",
+    "note": "Duits",
     "illEx": true
   }
 }
