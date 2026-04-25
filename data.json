@@ -1504,7 +1504,7 @@
   },
   "delibird": {
     "status": "illustration",
-    "note": "",
+    "note": "Duits",
     "illEx": true
   },
   "porygon-z": {
@@ -1981,5 +1981,195 @@
     "status": "illustration",
     "note": "Duits",
     "illEx": true
+  },
+  "plusle": {
+    "status": "illustration",
+    "note": "Chinese blind box, combo with Minun",
+    "illEx": true
+  },
+  "wiglett": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "whismur": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "dwebble": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "shuppet": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "tandemaus": {
+    "status": "regular",
+    "note": "Duits",
+    "illEx": false
+  },
+  "gogoat": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "kingambit": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "maschiff": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "mabosstiff": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "armarouge": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "purrloin": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "shroomish": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "trapinch": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "turtwig": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "manaphy": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "pachirisu": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "zarude": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "rellor": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "sealeo": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "clobbopus": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "magnezone": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "quaquaval": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "dhelmise": {
+    "status": "regular",
+    "note": "V/Vmax",
+    "illEx": true
+  },
+  "annihilape": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "torchic": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "huntail": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "pichu": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "monferno": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "empoleon": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "burmy": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "morpeko": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "chatot": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "magearna": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "sableye": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "turtonator": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "heatmor": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "skitty": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
   }
 }
