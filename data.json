@@ -1568,7 +1568,7 @@
     "illEx": true
   },
   "celebi": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -2583,7 +2583,7 @@
     "illEx": true
   },
   "torkoal": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -2593,7 +2593,7 @@
     "illEx": true
   },
   "altaria": {
-    "status": "missing",
+    "status": "regular",
     "note": "ex or IR",
     "illEx": true
   },
@@ -2613,12 +2613,12 @@
     "illEx": true
   },
   "feebas": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
   "absol": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -2633,7 +2633,7 @@
     "illEx": true
   },
   "relicanth": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -2830,6 +2830,346 @@
   "arceus": {
     "status": "missing",
     "note": "Regular / V / Vstar",
+    "illEx": true
+  },
+  "pawniard": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "silicobra": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "sandaconda": {
+    "status": "regular",
+    "note": "V",
+    "illEx": true
+  },
+  "spinda": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "dewpider": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "thievul": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "nickit": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "galarian-darmanitan": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "virizion": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "vullaby": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "hatterene": {
+    "status": "missing",
+    "note": "V / Vmax",
+    "illEx": true
+  },
+  "hatenna": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "taillow": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "cufant": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "chewtle": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "dragalge": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "glalie": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "heliolisk": {
+    "status": "regular",
+    "note": "Sunning, fing cute",
+    "illEx": true
+  },
+  "helioptile": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "trubbish": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "garbodor": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "vigoroth": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "simipour": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "simisage": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "simisear": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "panpour": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "pansear": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "pansage": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "deino": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "kyurem": {
+    "status": "missing",
+    "note": "ex",
+    "illEx": true
+  },
+  "morgrem": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "toxel": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "obstagoon": {
+    "status": "regular",
+    "note": "galarian (regular entry)",
+    "illEx": true
+  },
+  "accelgor": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "bewear": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "centiskorch": {
+    "status": "regular",
+    "note": "V / Vmax",
+    "illEx": true
+  },
+  "seedot": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "aron": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "volcarona": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "zangoose": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "floatzel": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "croagunk": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "lickilicky": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "oshawott": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "victini": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "serperior": {
+    "status": "missing",
+    "note": "V / ex",
+    "illEx": true
+  },
+  "emboar": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "pignite": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "dewott": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "samurott": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "tepig": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "blitzle": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "sigilyph": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "vanillish": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "vanillite": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "vanilluxe": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "golurk": {
+    "status": "missing",
+    "note": "V",
+    "illEx": true
+  },
+  "golett": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "cobalion": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "honedge": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "malamar": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "gumshoos": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "zeraora": {
+    "status": "regular",
+    "note": "ir / v / vmax / vstar",
+    "illEx": true
+  },
+  "milcery": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "dracovish": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "cursola": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "charcadet": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "ceruledge": {
+    "status": "missing",
+    "note": "",
     "illEx": true
   }
 }
