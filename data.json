@@ -1573,7 +1573,7 @@
     "illEx": true
   },
   "kingdra": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -2568,7 +2568,7 @@
     "illEx": true
   },
   "electrike": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -2598,7 +2598,7 @@
     "illEx": true
   },
   "solrock": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -2608,7 +2608,7 @@
     "illEx": true
   },
   "lileep": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -2668,7 +2668,7 @@
     "illEx": true
   },
   "jirachi": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3368,7 +3368,7 @@
     "illEx": true
   },
   "yamask": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3603,6 +3603,91 @@
     "illEx": true
   },
   "genesect": {
+    "status": "missing",
+    "note": "V / ex",
+    "illEx": true
+  },
+  "mudbray": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "finneon": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "iron-boulder": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "bombirdier": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "crawdaunt": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "tinkatink": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "braixen": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "pyroar": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "espurr": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "doublade": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "clawitzer": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "aurorus": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "carbink": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "trevenant": {
+    "status": "missing",
+    "note": "Hop's",
+    "illEx": true
+  },
+  "diancie": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "hoopa": {
+    "status": "missing",
+    "note": "V",
+    "illEx": true
+  },
+  "volcanion": {
     "status": "missing",
     "note": "V / ex",
     "illEx": true
