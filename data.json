@@ -3691,5 +3691,15 @@
     "status": "missing",
     "note": "V / ex",
     "illEx": true
+  },
+  "rotom-fan": {
+    "status": "regular",
+    "note": "",
+    "illEx": true
+  },
+  "rotom-mow": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
   }
 }
