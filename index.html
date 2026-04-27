@@ -429,7 +429,7 @@ function render(){
     } else {
       for(const p of [...base,...rf]){
         const st=gs(p.id).status,note=gs(p.id).note,illEx=gs(p.id).illEx;
-        const open=openRows.has(p.id)||!!note;
+        const open=openRows.has(p.id);
         const dnum=p.dex?'#'+String(p.dex).padStart(4,'0'):'';
         html+=
           '<div class="prow'+(p.regional?' rf':'')+'" data-id="'+p.id+'">'+
