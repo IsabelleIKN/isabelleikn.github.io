@@ -54,6 +54,9 @@ h1{font-size:17px;font-weight:700;margin-bottom:5px}
 .ninput{width:100%;padding:6px 8px;border:1px solid var(--border);border-radius:6px;font-size:13px;resize:vertical;min-height:54px;font-family:inherit;outline:none;line-height:1.4}
 .ninput:focus{border-color:#aaa}
 .empty{padding:48px 20px;text-align:center;color:var(--muted);font-size:14px}
+#top-btn{position:fixed;bottom:20px;right:16px;z-index:30;width:42px;height:42px;border-radius:50%;background:var(--text);color:#fff;border:none;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.25);-webkit-tap-highlight-color:transparent;transition:opacity .15s}
+#top-btn.show{display:flex}
+#top-btn:active{opacity:.75}
 /* ── Progress bar ── */
 .gen-hdr{display:flex;align-items:baseline;justify-content:space-between}
 .gen-prog{font-size:10px;color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none;white-space:nowrap}
@@ -125,6 +128,7 @@ h1{font-size:17px;font-weight:700;margin-bottom:5px}
   </div>
 </div>
 <div id="list"></div>
+<button id="top-btn" aria-label="Back to top">↑</button>
 <script>
 // ROSTER: [dex|null, name, gen, regional?]
 const ROSTER=[
@@ -199,6 +203,8 @@ const ROSTER=[
 [467,"Magmortar",4],[468,"Togekiss",4],[469,"Yanmega",4],[470,"Leafeon",4],[471,"Glaceon",4],[472,"Gliscor",4],[473,"Mamoswine",4],[474,"Porygon-Z",4],[475,"Gallade",4],[476,"Probopass",4],
 [477,"Dusknoir",4],[478,"Froslass",4],[479,"Rotom",4],[480,"Uxie",4],[481,"Mesprit",4],[482,"Azelf",4],[483,"Dialga",4],[484,"Palkia",4],[485,"Heatran",4],[486,"Regigigas",4],
 [487,"Giratina",4],[488,"Cresselia",4],[489,"Phione",4],[490,"Manaphy",4],[491,"Darkrai",4],[492,"Shaymin",4],[493,"Arceus",4],
+// Gen 4 alternate forms
+[null,"Drone Rotom",4,"Form"],[null,"Rotom Bike",4,"Form"],[null,"Rotom Dex",4,"Form"],[null,"Rotom Fan",4,"Form"],[null,"Rotom Frost",4,"Form"],[null,"Rotom Heat",4,"Form"],[null,"Rotom Mow",4,"Form"],[null,"Rotom Phone",4,"Form"],[null,"Rotom Wash",4,"Form"],[null,"Trainer Cards",4,"Form"],
 // ── Gen 5 ──────────────────────────────────────────────────────────
 [494,"Victini",5],[495,"Snivy",5],[496,"Servine",5],[497,"Serperior",5],[498,"Tepig",5],[499,"Pignite",5],[500,"Emboar",5],[501,"Oshawott",5],[502,"Dewott",5],[503,"Samurott",5],
 [504,"Patrat",5],[505,"Watchog",5],[506,"Lillipup",5],[507,"Herdier",5],[508,"Stoutland",5],[509,"Purrloin",5],[510,"Liepard",5],[511,"Pansage",5],[512,"Simisage",5],[513,"Pansear",5],
@@ -292,7 +298,7 @@ const POKEMON=ROSTER.map(([dex,name,gen,regional])=>({
 }));
 
 // Precompute base-Pokémon dex for each regional form (for sorting)
-const RORDER=['Alolan','Galarian','Hisuian','Paldean'];
+const RORDER=['Alolan','Galarian','Hisuian','Paldean','Form'];
 const BASE_DEX={};
 for(const p of POKEMON){
   if(!p.regional)continue;
@@ -363,7 +369,12 @@ async function loadData(){
 }
 
 function matches(p){
-  if(sq&&!p.name.toLowerCase().includes(sq))return false;
+  if(sq){
+    const stripped=sq.replace(/^#+/,'');
+    const byNum=/^\d+$/.test(stripped)&&p.dex===+stripped;
+    const byName=p.name.toLowerCase().includes(stripped);
+    if(!byName&&!byNum)return false;
+  }
   if(activeGen!=='all'&&p.gen!==+activeGen)return false;
   if(activeStatus==='missing-ill') return gs(p.id).illEx&&gs(p.id).status!=='illustration';
   if(activeStatus!=='all'&&gs(p.id).status!==activeStatus)return false;
@@ -434,7 +445,7 @@ function render(){
           '<div class="ninner">'+
           '<label class="ill-ex-row">'+
             '<input type="checkbox" '+(illEx?'checked':'')+' onchange="toggleIllEx(\''+p.id+'\',this.checked)">'+
-            ' Illustration card exists'+
+            ' Full art available'+
           '</label>'+
           '<textarea class="ninput" placeholder="Notes…" oninput="saveNote(\''+p.id+'\',this.value)">'+esc(note)+'</textarea>'+
           '</div></div></div>';
@@ -492,6 +503,10 @@ document.getElementById('vt-grid').addEventListener('click',function(){
   document.getElementById('vt-list').classList.remove('active');
   render();
 });
+
+const topBtn=document.getElementById('top-btn');
+window.addEventListener('scroll',()=>topBtn.classList.toggle('show',window.scrollY>240),{passive:true});
+topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
 loadData();
 </script>
