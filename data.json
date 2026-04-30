@@ -2363,7 +2363,7 @@
     "illEx": true
   },
   "varoom": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2388,7 +2388,7 @@
     "illEx": false
   },
   "shaymin": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2498,7 +2498,7 @@
     "illEx": true
   },
   "spiritomb": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2588,7 +2588,7 @@
     "illEx": true
   },
   "vibrava": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2713,7 +2713,7 @@
     "illEx": true
   },
   "ambipom": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2778,7 +2778,7 @@
     "illEx": true
   },
   "probopass": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2818,7 +2818,7 @@
     "illEx": true
   },
   "cresselia": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2918,12 +2918,12 @@
     "illEx": false
   },
   "heliolisk": {
-    "status": "regular",
+    "status": "illustration",
     "note": "Sunning, fing cute",
     "illEx": true
   },
   "helioptile": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3163,7 +3163,7 @@
     "illEx": false
   },
   "charcadet": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3338,7 +3338,7 @@
     "illEx": true
   },
   "emolga": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3413,7 +3413,7 @@
     "illEx": true
   },
   "reuniclus": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3543,7 +3543,7 @@
     "illEx": true
   },
   "braviary": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3773,7 +3773,7 @@
     "illEx": true
   },
   "sandygast": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -4196,5 +4196,10 @@
     "status": "missing",
     "note": "kinda. one of those crystal cards. thing itself looks like a crystal.",
     "illEx": true
+  },
+  "rotom-heat": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
   }
 }
