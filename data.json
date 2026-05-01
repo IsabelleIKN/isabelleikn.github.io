@@ -76,7 +76,7 @@
     "illEx": true
   },
   "pidgeotto": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -698,22 +698,22 @@
     "illEx": false
   },
   "hisuian-voltorb": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
   "paldean-tauros-combat": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
   "galarian-articuno": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
   "galarian-zapdos": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -918,7 +918,7 @@
     "illEx": false
   },
   "espathra": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1358,7 +1358,7 @@
     "illEx": true
   },
   "toedscruel": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1623,7 +1623,7 @@
     "illEx": false
   },
   "dunsparce": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1643,7 +1643,7 @@
     "illEx": false
   },
   "yanma": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1658,7 +1658,7 @@
     "illEx": false
   },
   "aipom": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2173,7 +2173,7 @@
     "illEx": false
   },
   "rotom": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2208,7 +2208,7 @@
     "illEx": true
   },
   "lycanroc": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2353,7 +2353,7 @@
     "illEx": false
   },
   "greedent": {
-    "status": "regular",
+    "status": "illustration",
     "note": "Arven's Greedent",
     "illEx": true
   },
@@ -2453,7 +2453,7 @@
     "illEx": true
   },
   "toxtricity": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2568,7 +2568,7 @@
     "illEx": true
   },
   "electrike": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2858,7 +2858,7 @@
     "illEx": false
   },
   "thievul": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3098,7 +3098,7 @@
     "illEx": true
   },
   "vanillish": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3643,7 +3643,7 @@
     "illEx": true
   },
   "pyroar": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3693,7 +3693,7 @@
     "illEx": true
   },
   "rotom-fan": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3733,7 +3733,7 @@
     "illEx": true
   },
   "oricorio": {
-    "status": "missing",
+    "status": "illustration",
     "note": "ex / IR",
     "illEx": true
   },
@@ -3918,7 +3918,7 @@
     "illEx": true
   },
   "dottler": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3948,7 +3948,7 @@
     "illEx": true
   },
   "zamazenta": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3998,7 +3998,7 @@
     "illEx": true
   },
   "spidops": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -4143,7 +4143,7 @@
     "illEx": true
   },
   "poltchageist": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -4168,7 +4168,7 @@
     "illEx": true
   },
   "hydrapple": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },

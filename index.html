@@ -25,8 +25,11 @@ h1{font-size:17px;font-weight:700;margin-bottom:5px}
 .stats{display:flex;gap:14px;font-size:12px;color:var(--muted)}
 .stats b{color:var(--text)}
 #controls{background:#fff;border-bottom:1px solid var(--border);padding:10px 12px;display:flex;flex-direction:column;gap:8px}
-#search{padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;width:100%;outline:none;background:#fafafa}
+.search-wrap{position:relative;width:100%}
+#search{padding:8px 32px 8px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;width:100%;outline:none;background:#fafafa}
 #search:focus{border-color:#aaa;background:#fff}
+#search-clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--muted);font-size:16px;cursor:pointer;padding:2px 4px;display:none;line-height:1;-webkit-tap-highlight-color:transparent}
+#search-clear.show{display:block}
 .frow{display:flex;gap:6px;flex-wrap:wrap}
 .fbtn{padding:4px 10px;border:1px solid var(--border);border-radius:14px;background:#fff;cursor:pointer;font-size:12px;white-space:nowrap;transition:background .12s,color .12s,border-color .12s;-webkit-tap-highlight-color:transparent}
 .fbtn.active{background:var(--text);color:#fff;border-color:var(--text)}
@@ -57,12 +60,14 @@ h1{font-size:17px;font-weight:700;margin-bottom:5px}
 #top-btn{position:fixed;bottom:20px;right:16px;z-index:30;width:42px;height:42px;border-radius:50%;background:var(--text);color:#fff;border:none;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.25);-webkit-tap-highlight-color:transparent;transition:opacity .15s}
 #top-btn.show{display:flex}
 #top-btn:active{opacity:.75}
-/* ── Progress bar ── */
+/* ── Progress bars ── */
 .gen-hdr{display:flex;align-items:baseline;justify-content:space-between}
 .gen-prog{font-size:10px;color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none;white-space:nowrap}
-.prog-bar{height:3px;background:#d8d8d8;margin:0 0 0 0}
+.prog-bar{height:3px;background:#d8d8d8}
 .prog-fill{height:100%;background:var(--reg-bg);transition:width .3s}
 .prog-fill.done{background:var(--ill-bg)}
+.prog-bar-ill{height:3px;background:#d8d8d8;margin-top:1px}
+.prog-fill-ill{height:100%;background:var(--ill-bg);transition:width .3s}
 /* ── illEx indicator & toggle ── */
 .ill-dot{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:var(--ill-bg);color:#fff;font-size:9px;font-weight:700;flex-shrink:0;vertical-align:middle}
 .ill-ex-row{display:flex;align-items:center;gap:8px;padding-bottom:8px;font-size:13px;color:var(--text);cursor:pointer}
@@ -99,7 +104,10 @@ h1{font-size:17px;font-weight:700;margin-bottom:5px}
   </div>
 </div>
 <div id="controls">
-  <input id="search" type="search" placeholder="Search Pokémon…" autocomplete="off" spellcheck="false">
+  <div class="search-wrap">
+    <input id="search" type="search" placeholder="Search Pokémon…" autocomplete="off" spellcheck="false">
+    <button id="search-clear" aria-label="Clear search">✕</button>
+  </div>
   <div class="frow" id="gf">
     <button class="fbtn active" data-gen="all">All gens</button>
     <button class="fbtn" data-gen="1">Gen 1</button>
@@ -402,15 +410,18 @@ function render(){
 
     const haveN=allG.filter(p=>gs(p.id).status!=='missing').length;
     const illExN=allG.filter(p=>gs(p.id).illEx).length;
+    const illCollected=allG.filter(p=>gs(p.id).illEx&&gs(p.id).status==='illustration').length;
     const pct=allG.length?Math.round(haveN/allG.length*100):0;
+    const illPct=illExN?Math.round(illCollected/illExN*100):0;
     const done=haveN===allG.length;
 
     html+=
       '<div class="gen-section">'+
       '<div class="gen-hdr">Generation '+g+
-        '<span class="gen-prog">'+haveN+' / '+allG.length+(illExN?' &nbsp;★ '+illExN:'')+'</span>'+
+        '<span class="gen-prog">'+haveN+'/'+allG.length+(illExN?' &nbsp;★ '+illCollected+'/'+illExN:'')+'</span>'+
       '</div>'+
-      '<div class="prog-bar"><div class="prog-fill'+(done?' done':'')+'" style="width:'+pct+'%"></div></div>';
+      '<div class="prog-bar"><div class="prog-fill'+(done?' done':'')+'" style="width:'+pct+'%"></div></div>'+
+      (illExN?'<div class="prog-bar-ill"><div class="prog-fill-ill" style="width:'+illPct+'%"></div></div>':'');
 
     if(viewMode==='grid'){
       html+='<div class="gcells">';
@@ -474,8 +485,18 @@ function exportData(){
 }
 
 // ── Event listeners ─────────────────────────────────────────────────
-document.getElementById('search').addEventListener('input',e=>{
-  sq=e.target.value.trim().toLowerCase();render();
+const searchEl=document.getElementById('search');
+const searchClear=document.getElementById('search-clear');
+searchEl.addEventListener('input',e=>{
+  sq=e.target.value.trim().toLowerCase();
+  searchClear.classList.toggle('show',e.target.value.length>0);
+  render();
+});
+searchClear.addEventListener('click',()=>{
+  searchEl.value='';sq='';
+  searchClear.classList.remove('show');
+  searchEl.focus();
+  render();
 });
 document.getElementById('gf').addEventListener('click',e=>{
   const b=e.target.closest('[data-gen]');if(!b)return;
