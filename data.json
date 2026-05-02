@@ -993,7 +993,7 @@
     "illEx": true
   },
   "snom": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1908,7 +1908,7 @@
     "illEx": true
   },
   "applin": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2018,7 +2018,7 @@
     "illEx": false
   },
   "kingambit": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2158,7 +2158,7 @@
     "illEx": false
   },
   "turtonator": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2178,7 +2178,7 @@
     "illEx": true
   },
   "noibat": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2543,7 +2543,7 @@
     "illEx": true
   },
   "ninjask": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3188,7 +3188,7 @@
     "illEx": true
   },
   "herdier": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3213,7 +3213,7 @@
     "illEx": true
   },
   "tranquill": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3678,7 +3678,7 @@
     "illEx": true
   },
   "diancie": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3758,7 +3758,7 @@
     "illEx": true
   },
   "comfey": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
