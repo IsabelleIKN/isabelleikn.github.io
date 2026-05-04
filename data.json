@@ -825,7 +825,7 @@
   "floette": {
     "status": "regular",
     "note": "",
-    "illEx": false
+    "illEx": true
   },
   "florges": {
     "status": "regular",
@@ -1420,7 +1420,7 @@
   "froakie": {
     "status": "regular",
     "note": "",
-    "illEx": false
+    "illEx": true
   },
   "surskit": {
     "status": "regular",
@@ -2910,7 +2910,7 @@
   "dragalge": {
     "status": "regular",
     "note": "",
-    "illEx": false
+    "illEx": true
   },
   "glalie": {
     "status": "regular",
@@ -4461,5 +4461,40 @@
     "status": "regular",
     "note": "",
     "illEx": false
+  },
+  "chespin": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "fennekin": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "frogadier": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "xerneas": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "claydol": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "sliggoo": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
+  },
+  "greninja": {
+    "status": "missing",
+    "note": "",
+    "illEx": true
   }
 }
