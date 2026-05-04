@@ -90,7 +90,7 @@
     "note": ""
   },
   "raticate": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -157,7 +157,7 @@
     "illEx": true
   },
   "clefairy": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -456,7 +456,7 @@
     "note": ""
   },
   "exeggcute": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -743,7 +743,7 @@
     "illEx": true
   },
   "hisuian-typhlosion": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -768,12 +768,12 @@
     "illEx": true
   },
   "hisuian-goodra": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
   "ribombee": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1048,7 +1048,7 @@
     "illEx": true
   },
   "budew": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1083,7 +1083,7 @@
     "illEx": false
   },
   "paldean-wooper": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -1153,7 +1153,7 @@
     "illEx": true
   },
   "metang": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": false
   },
@@ -1443,7 +1443,7 @@
     "illEx": true
   },
   "talonflame": {
-    "status": "illustration",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -1458,7 +1458,7 @@
     "illEx": false
   },
   "houndour": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1508,7 +1508,7 @@
     "illEx": true
   },
   "porygon-z": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -1528,12 +1528,12 @@
     "illEx": true
   },
   "entei": {
-    "status": "missing",
+    "status": "regular",
     "note": "V",
     "illEx": true
   },
   "raikou": {
-    "status": "missing",
+    "status": "regular",
     "note": "V",
     "illEx": true
   },
@@ -1553,17 +1553,17 @@
     "illEx": true
   },
   "hitmontop": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
   "smeargle": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
   "ho-oh": {
-    "status": "missing",
+    "status": "regular",
     "note": "Ethan's EX",
     "illEx": true
   },
@@ -1673,7 +1673,7 @@
     "illEx": true
   },
   "azumarill": {
-    "status": "missing",
+    "status": "regular",
     "note": "Full art",
     "illEx": true
   },
@@ -1748,7 +1748,7 @@
     "illEx": false
   },
   "meganium": {
-    "status": "missing",
+    "status": "regular",
     "note": "mega ex",
     "illEx": true
   },
@@ -2518,12 +2518,12 @@
     "illEx": true
   },
   "blaziken": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
   "poochyena": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -2563,7 +2563,7 @@
     "illEx": true
   },
   "lairon": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2603,7 +2603,7 @@
     "illEx": true
   },
   "whiscash": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -2613,7 +2613,7 @@
     "illEx": true
   },
   "feebas": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2678,7 +2678,7 @@
     "illEx": true
   },
   "chimchar": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -2953,7 +2953,7 @@
     "illEx": true
   },
   "simisear": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -2963,7 +2963,7 @@
     "illEx": true
   },
   "pansear": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3208,7 +3208,7 @@
     "illEx": true
   },
   "unfezant": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3243,12 +3243,12 @@
     "illEx": true
   },
   "drilbur": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
   "excadrill": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3268,7 +3268,7 @@
     "illEx": true
   },
   "palpitoad": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3288,7 +3288,7 @@
     "illEx": true
   },
   "sewaddle": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3303,7 +3303,7 @@
     "illEx": true
   },
   "whirlipede": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3318,7 +3318,7 @@
     "illEx": true
   },
   "petilil": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3328,7 +3328,7 @@
     "illEx": true
   },
   "mienshao": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3393,7 +3393,7 @@
     "illEx": true
   },
   "archeops": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3403,7 +3403,7 @@
     "illEx": true
   },
   "hisuian-lilligant": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3423,17 +3423,17 @@
     "illEx": true
   },
   "swanna": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
   "foongus": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
   "amoonguss": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3453,7 +3453,7 @@
     "illEx": true
   },
   "joltik": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3478,7 +3478,7 @@
     "illEx": true
   },
   "beheeyem": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3523,7 +3523,7 @@
     "illEx": true
   },
   "cryogonal": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3538,7 +3538,7 @@
     "illEx": true
   },
   "bisharp": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3638,7 +3638,7 @@
     "illEx": false
   },
   "braixen": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3663,7 +3663,7 @@
     "illEx": true
   },
   "aurorus": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3703,7 +3703,7 @@
     "illEx": false
   },
   "rowlet": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3718,7 +3718,7 @@
     "illEx": true
   },
   "charjabug": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3988,7 +3988,7 @@
     "illEx": true
   },
   "sprigatito": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -4003,7 +4003,7 @@
     "illEx": true
   },
   "pawmo": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -4023,7 +4023,7 @@
     "illEx": true
   },
   "rabsca": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -4033,7 +4033,7 @@
     "illEx": true
   },
   "palafin": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -4043,7 +4043,7 @@
     "illEx": true
   },
   "dondozo": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -4053,7 +4053,7 @@
     "illEx": true
   },
   "scream-tail": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -4083,7 +4083,7 @@
     "illEx": true
   },
   "iron-jugulis": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -4093,7 +4093,7 @@
     "illEx": true
   },
   "iron-thorns": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -4103,7 +4103,7 @@
     "illEx": true
   },
   "gimmighoul": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -4178,7 +4178,7 @@
     "illEx": true
   },
   "raging-bolt": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -4198,6 +4198,266 @@
     "illEx": true
   },
   "rotom-heat": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "ampharos": {
+    "status": "illustration",
+    "note": "",
+    "illEx": true
+  },
+  "jumpluff": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "camerupt": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "delcatty": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "corsola": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "slaking": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "spoink": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "croconaw": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "zigzagoon": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "galarian-zigzagoon": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "bagon": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "wurmple": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "gastrodon": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "bellossom": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "silcoon": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "vespiquen": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "bounsweet": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "carvanha": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "buizel": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "cascoon": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "hisuian-sliggoo": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "inkay": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "clodsire": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "phantump": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "sizzlipede": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "finizen": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "tyrogue": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "pancham": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "pikipek": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "swirlix": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "eldegoss": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "galarian-corsola": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "klefki": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "hisuian-braviary": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "ursaring": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "togepi": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "politoed": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "porygon2": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "pincurchin": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "wailmer": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "galarian-meowth": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "hoppip": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "wingull": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "elekid": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "grapploct": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "torracat": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "donphan": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "pelipper": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "alolan-marowak": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "alolan-graveler": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "cyndaquil": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "bayleef": {
     "status": "regular",
     "note": "",
     "illEx": false
