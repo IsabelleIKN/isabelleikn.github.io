@@ -758,7 +758,7 @@
     "illEx": true
   },
   "hisuian-samurott": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -2493,7 +2493,7 @@
     "illEx": true
   },
   "bronzor": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3083,7 +3083,7 @@
     "illEx": true
   },
   "tepig": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3273,7 +3273,7 @@
     "illEx": true
   },
   "seismitoad": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3288,7 +3288,7 @@
     "illEx": true
   },
   "sewaddle": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -4496,5 +4496,10 @@
     "status": "missing",
     "note": "",
     "illEx": true
+  },
+  "rotom-dex": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
   }
 }
