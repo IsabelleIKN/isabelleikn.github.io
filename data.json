@@ -482,7 +482,7 @@
     "note": ""
   },
   "lickitung": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -863,7 +863,7 @@
     "illEx": false
   },
   "chimecho": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1083,7 +1083,7 @@
     "illEx": false
   },
   "paldean-wooper": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1228,7 +1228,7 @@
     "illEx": true
   },
   "darumaka": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -1293,7 +1293,7 @@
     "illEx": false
   },
   "meltan": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -1573,7 +1573,7 @@
     "illEx": true
   },
   "kingdra": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2028,7 +2028,7 @@
     "illEx": false
   },
   "mabosstiff": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2303,12 +2303,12 @@
     "illEx": true
   },
   "sandile": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
   "klawf": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2393,7 +2393,7 @@
     "illEx": true
   },
   "skwovet": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2428,7 +2428,7 @@
     "illEx": true
   },
   "quaxwell": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2533,7 +2533,7 @@
     "illEx": true
   },
   "ludicolo": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -2633,7 +2633,7 @@
     "illEx": true
   },
   "relicanth": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3118,7 +3118,7 @@
     "illEx": true
   },
   "golett": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3378,7 +3378,7 @@
     "illEx": true
   },
   "tirtouga": {
-    "status": "missing",
+    "status": "regular",
     "note": "",
     "illEx": true
   },
@@ -3753,7 +3753,7 @@
     "illEx": true
   },
   "stufful": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3818,7 +3818,7 @@
     "illEx": false
   },
   "bramblin": {
-    "status": "regular",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3913,7 +3913,7 @@
     "illEx": true
   },
   "inteleon": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -3933,7 +3933,7 @@
     "illEx": true
   },
   "alcremie": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -4463,7 +4463,7 @@
     "illEx": false
   },
   "chespin": {
-    "status": "missing",
+    "status": "illustration",
     "note": "",
     "illEx": true
   },
@@ -4498,6 +4498,16 @@
     "illEx": true
   },
   "rotom-dex": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "gible": {
+    "status": "regular",
+    "note": "",
+    "illEx": false
+  },
+  "staravia": {
     "status": "regular",
     "note": "",
     "illEx": false
