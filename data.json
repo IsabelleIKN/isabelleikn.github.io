@@ -346,7 +346,8 @@
   },
   "ponyta": {
     "status": "regular",
-    "note": ""
+    "note": "chinese exclusive",
+    "illEx": true
   },
   "rapidash": {
     "status": "illustration",
@@ -467,7 +468,8 @@
   },
   "cubone": {
     "status": "regular",
-    "note": ""
+    "note": "Chinese exclusive",
+    "illEx": true
   },
   "marowak": {
     "status": "regular",
