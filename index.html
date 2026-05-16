@@ -18,12 +18,16 @@
   --ill-bg:#f4a823;--ill-fg:#fff;
   --rform-bg:#f0ebff;
   --rtag-bg:#dcceff;--rtag-fg:#5500b5;
+  --friend-bg:#e63946;--friend-fg:#fff;
 }
 body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif;font-size:15px}
 #header{background:#fff;border-bottom:1px solid var(--border);padding:12px 16px;position:sticky;top:0;z-index:20;box-shadow:0 1px 4px rgba(0,0,0,.06)}
 h1{font-size:17px;font-weight:700;margin-bottom:5px}
-.stats{display:flex;gap:14px;font-size:12px;color:var(--muted)}
+.stats{display:flex;gap:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
 .stats b{color:var(--text)}
+#mode-banner{display:none;font-size:11px;font-weight:600;text-align:center;margin:8px -16px -12px;padding:5px 16px;border-top:1px solid rgba(0,0,0,.06)}
+.mode-friend #mode-banner{display:block;background:#fce8f3;color:#b0006d}
+.mode-readonly #mode-banner{display:block;background:#f0f0f0;color:#666}
 #controls{background:#fff;border-bottom:1px solid var(--border);padding:10px 12px;display:flex;flex-direction:column;gap:8px}
 .search-wrap{position:relative;width:100%}
 #search{padding:8px 32px 8px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;width:100%;outline:none;background:#fafafa}
@@ -72,6 +76,21 @@ h1{font-size:17px;font-weight:700;margin-bottom:5px}
 .ill-dot{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:var(--ill-bg);color:#fff;font-size:9px;font-weight:700;flex-shrink:0;vertical-align:middle}
 .ill-ex-row{display:flex;align-items:center;gap:8px;padding-bottom:8px;font-size:13px;color:var(--text);cursor:pointer}
 .ill-ex-row input{width:15px;height:15px;cursor:pointer;accent-color:var(--ill-bg);flex-shrink:0}
+/* ── Friend indicator & toggle ── */
+.friend-dot{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:var(--friend-bg);color:var(--friend-fg);font-size:9px;font-weight:700;flex-shrink:0;vertical-align:middle}
+.friend-row{display:flex;align-items:center;gap:8px;padding-bottom:8px;font-size:13px;color:var(--text);cursor:pointer}
+.friend-row input{width:15px;height:15px;cursor:pointer;accent-color:var(--friend-bg);flex-shrink:0}
+.gfriend{position:absolute;bottom:3px;left:4px;font-size:9px;line-height:1}
+.gcell.s-missing .gfriend{color:rgba(180,0,0,.7)}
+.gcell:not(.s-missing) .gfriend{color:rgba(255,200,200,.9)}
+.gcell.fh{box-shadow:inset 0 0 0 2px rgba(230,57,70,.7)}
+/* ── Mode-based disabling ── */
+body:not(.mode-owner) .sbtn{pointer-events:none;opacity:.7}
+body:not(.mode-owner) .ill-ex-row{pointer-events:none;cursor:default}
+body:not(.mode-owner) .ninput{pointer-events:none;resize:none;color:var(--muted)}
+body:not(.mode-friend) .friend-row{pointer-events:none;cursor:default}
+body:not(.mode-friend) .friend-row input{opacity:.7}
+body:not(.mode-owner) #export-btn{display:none}
 /* ── View toggle ── */
 .view-toggle{display:flex;gap:4px}
 .vtbtn{padding:5px 12px;border:1px solid var(--border);border-radius:6px;background:#fff;cursor:pointer;font-size:13px;-webkit-tap-highlight-color:transparent;transition:background .12s,color .12s}
@@ -86,6 +105,7 @@ h1{font-size:17px;font-weight:700;margin-bottom:5px}
 .gcell.s-regular{background:var(--reg-bg)}
 .gcell.s-illustration{background:var(--ill-bg)}
 .gcell.rf{box-shadow:inset 0 0 0 2px rgba(120,0,220,.3)}
+.gcell.rf.fh{box-shadow:inset 0 0 0 2px rgba(120,0,220,.3),inset 0 0 0 4px rgba(230,57,70,.5)}
 .gdex{font-size:9px;font-weight:600;line-height:1;color:rgba(255,255,255,.65)}
 .gcell.s-missing .gdex{color:rgba(0,0,0,.3)}
 .gname{font-size:10px;font-weight:600;text-align:center;line-height:1.2;margin-top:2px;word-break:break-word;hyphens:auto;color:#fff;max-width:100%}
@@ -101,7 +121,9 @@ h1{font-size:17px;font-weight:700;margin-bottom:5px}
     <span>Total: <b id="st-tot">0</b></span>
     <span>Have: <b id="st-hav">0</b></span>
     <span>★ <b id="st-ill">0</b> / <b id="st-ill-ex">0</b> exist</span>
+    <span>♥ <b id="st-friend">0</b></span>
   </div>
+  <div id="mode-banner"></div>
 </div>
 <div id="controls">
   <div class="search-wrap">
@@ -132,12 +154,25 @@ h1{font-size:17px;font-weight:700;margin-bottom:5px}
       <button class="vtbtn active" id="vt-list">☰ List</button>
       <button class="vtbtn" id="vt-grid">⊞ Grid</button>
     </div>
-    <button id="export-btn">💾 Save &amp; Export</button>
+    <button id="export-btn">💾 Export backup</button>
   </div>
 </div>
 <div id="list"></div>
 <button id="top-btn" aria-label="Back to top">↑</button>
 <script>
+// ── Config ──────────────────────────────────────────────────────────
+const BIN_OWNER='6a082ef6c0954111d82fe8b5';
+const BIN_FRIEND='6a082ed9250b1311c35ac41b';
+const AKEY='$2a$10$Qrbj8bNzfBOdqw4QSHfv1Op4rAUDoPxTX0Vyi/sucCE/JoOOSG6re';
+const API='https://api.jsonbin.io/v3/b/';
+const MODE=(()=>{const p=new URLSearchParams(location.search);return p.has('readonly')?'readonly':p.has('friend')?'friend':'owner';})();
+document.body.className='mode-'+MODE;
+{
+  const b=document.getElementById('mode-banner');
+  if(MODE==='friend')b.textContent='Friend mode — tick the cards you have! :3';
+  else if(MODE==='readonly')b.textContent='Read-only view';
+}
+
 // ROSTER: [dex|null, name, gen, regional?]
 const ROSTER=[
 // ── Gen 1 ──────────────────────────────────────────────────────────
@@ -290,14 +325,15 @@ const ROSTER=[
 // ── State & helpers ─────────────────────────────────────────────────
 const STATUSES=['missing','regular','illustration'];
 const ICONS={missing:'–',regular:'●',illustration:'★'};
-let state={};
+let ownerState={};
+let friendState={};
 const openRows=new Set();
 let activeGen='all',activeStatus='all',sq='',viewMode='list';
 
 function mkId(name){
   return name.toLowerCase()
     .replace(/♀/g,'f').replace(/♂/g,'m')
-    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .normalize('NFD').replace(/[̀-ͯ]/g,'')
     .replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 }
 
@@ -317,61 +353,126 @@ for(const p of POKEMON){
   BASE_DEX[p.id]=base?base.dex:9999;
 }
 
-function gs(id){return state[id]||{status:'missing',note:'',illEx:false};}
+function gs(id){
+  const o=ownerState[id]||{status:'missing',note:'',illEx:false};
+  return{...o,friendHas:!!friendState[id]};
+}
 
 function cycleStatus(id,e){
+  if(MODE!=='owner')return;
   if(e){e.stopPropagation();e.preventDefault();}
-  const next=STATUSES[(STATUSES.indexOf(gs(id).status)+1)%STATUSES.length];
-  state[id]={...gs(id),status:next};
-  saveLocal();
-  // list mode: update the status button
+  const cur=ownerState[id]||{status:'missing',note:'',illEx:false};
+  const next=STATUSES[(STATUSES.indexOf(cur.status||'missing')+1)%STATUSES.length];
+  ownerState[id]={...cur,status:next};
+  saveOwnerD();
   const btn=document.querySelector('[data-id="'+id+'"] .sbtn');
   if(btn){btn.className='sbtn s-'+next;btn.textContent=ICONS[next];}
-  // grid mode: update the cell colour
   const cell=document.querySelector('.gcell[data-id="'+id+'"]');
   if(cell){STATUSES.forEach(s=>cell.classList.remove('s-'+s));cell.classList.add('s-'+next);}
   updateStats();
 }
 
+// In grid view, friend mode: clicking a cell toggles friendHas
+function handleCellClick(id,e){
+  if(MODE==='owner'){cycleStatus(id,e);}
+  else if(MODE==='friend'){toggleFriendHas(id,!friendState[id]);}
+}
+
 function saveNote(id,val){
-  state[id]={...gs(id),note:val};
-  saveLocal();
+  if(MODE!=='owner')return;
+  const cur=ownerState[id]||{status:'missing',note:'',illEx:false};
+  ownerState[id]={...cur,note:val};
+  saveOwnerD();
 }
 
 function toggleIllEx(id,val){
-  state[id]={...gs(id),illEx:!!val};
-  saveLocal();
-  // update the ★ dot in the row name without re-rendering
+  if(MODE!=='owner')return;
+  const cur=ownerState[id]||{status:'missing',note:'',illEx:false};
+  ownerState[id]={...cur,illEx:!!val};
+  saveOwnerD();
   const dot=document.querySelector('[data-id="'+id+'"] .ill-dot');
   if(val&&!dot){
     const pname=document.querySelector('[data-id="'+id+'"] .pname');
     if(pname)pname.insertAdjacentHTML('beforeend','<span class="ill-dot">★</span>');
-  } else if(!val&&dot){dot.remove();}
+  }else if(!val&&dot){dot.remove();}
   updateStats();
 }
 
-function saveLocal(){
-  try{localStorage.setItem('pkdx-binder',JSON.stringify(state));}catch(_){}
+function toggleFriendHas(id,val){
+  if(MODE!=='friend')return;
+  friendState[id]=!!val;
+  // update ♥ dot in list row name
+  const dot=document.querySelector('[data-id="'+id+'"] .friend-dot');
+  if(val&&!dot){
+    const pname=document.querySelector('[data-id="'+id+'"] .pname');
+    if(pname)pname.insertAdjacentHTML('beforeend','<span class="friend-dot">♥</span>');
+  }else if(!val&&dot){dot.remove();}
+  // update grid cell indicator + ring
+  const cell=document.querySelector('.gcell[data-id="'+id+'"]');
+  if(cell){
+    cell.classList.toggle('fh',!!val);
+    const gf=cell.querySelector('.gfriend');
+    if(val&&!gf)cell.insertAdjacentHTML('afterbegin','<span class="gfriend">♥</span>');
+    else if(!val&&gf)gf.remove();
+  }
+  // sync checkbox in expanded panel if open
+  const cb=document.querySelector('[data-id="'+id+'"] .friend-cb');
+  if(cb)cb.checked=!!val;
+  updateStats();
+  saveFriendD();
 }
+
+// ── Persistence ─────────────────────────────────────────────────────
+let _ownerTimer=null;
+function saveOwner(){
+  fetch(API+BIN_OWNER,{
+    method:'PUT',
+    headers:{'Content-Type':'application/json','X-Access-Key':AKEY},
+    body:JSON.stringify(ownerState)
+  }).catch(_=>_);
+  try{localStorage.setItem('pkdx-binder',JSON.stringify(ownerState));}catch(_){}
+}
+function saveOwnerD(){clearTimeout(_ownerTimer);_ownerTimer=setTimeout(saveOwner,800);}
+
+let _friendTimer=null;
+function saveFriend(){
+  fetch(API+BIN_FRIEND,{
+    method:'PUT',
+    headers:{'Content-Type':'application/json','X-Access-Key':AKEY},
+    body:JSON.stringify(friendState)
+  }).catch(_=>_);
+}
+function saveFriendD(){clearTimeout(_friendTimer);_friendTimer=setTimeout(saveFriend,500);}
 
 function updateStats(){
   const tot=POKEMON.length;
   const hav=POKEMON.filter(p=>gs(p.id).status!=='missing').length;
   const ill=POKEMON.filter(p=>gs(p.id).status==='illustration').length;
   const illEx=POKEMON.filter(p=>gs(p.id).illEx).length;
+  const friendN=POKEMON.filter(p=>gs(p.id).friendHas).length;
   document.getElementById('st-tot').textContent=tot;
   document.getElementById('st-hav').textContent=hav;
   document.getElementById('st-ill').textContent=ill;
   document.getElementById('st-ill-ex').textContent=illEx;
+  document.getElementById('st-friend').textContent=friendN;
 }
 
 async function loadData(){
   try{
-    const r=await fetch('./data.json');
-    if(!r.ok)throw 0;
-    state=await r.json();
+    const [or,fr]=await Promise.all([
+      fetch(API+BIN_OWNER+'/latest',{headers:{'X-Access-Key':AKEY}}),
+      fetch(API+BIN_FRIEND+'/latest',{headers:{'X-Access-Key':AKEY}})
+    ]);
+    if(or.ok){const d=await or.json();ownerState=d.record||{};}
+    if(fr.ok){
+      const d=await fr.json();
+      const raw=d.record||{};
+      friendState={};
+      // only keep boolean values — sanitises the bin if it was seeded with owner data
+      for(const[k,v]of Object.entries(raw)){if(typeof v==='boolean')friendState[k]=v;}
+    }
   }catch(_){
-    try{const s=localStorage.getItem('pkdx-binder');if(s)state=JSON.parse(s);}catch(_){}
+    try{const s=localStorage.getItem('pkdx-binder');if(s)ownerState=JSON.parse(s);}catch(_){}
   }
   render();
 }
@@ -384,7 +485,7 @@ function matches(p){
     if(!byName&&!byNum)return false;
   }
   if(activeGen!=='all'&&p.gen!==+activeGen)return false;
-  if(activeStatus==='missing-ill') return gs(p.id).illEx&&gs(p.id).status!=='illustration';
+  if(activeStatus==='missing-ill')return gs(p.id).illEx&&gs(p.id).status!=='illustration';
   if(activeStatus!=='all'&&gs(p.id).status!==activeStatus)return false;
   return true;
 }
@@ -396,11 +497,9 @@ function esc(s){
 function render(){
   let html='';
   for(let g=1;g<=9;g++){
-    // All Pokémon in this gen (unfiltered) for progress stats
     const allBase=POKEMON.filter(p=>p.gen===g&&!p.regional);
     const allRf=POKEMON.filter(p=>p.gen===g&&p.regional);
     const allG=[...allBase,...allRf];
-    // Filtered list for display
     const base=allBase.filter(matches);
     const rf=allRf.filter(matches).sort((a,b)=>{
       const rd=RORDER.indexOf(a.regional)-RORDER.indexOf(b.regional);
@@ -426,20 +525,21 @@ function render(){
     if(viewMode==='grid'){
       html+='<div class="gcells">';
       for(const p of [...base,...rf]){
-        const st=gs(p.id).status,illEx=gs(p.id).illEx;
+        const st=gs(p.id).status,illEx=gs(p.id).illEx,friendHas=gs(p.id).friendHas;
         const dnum=p.dex?'#'+String(p.dex).padStart(4,'0'):'';
         html+=
-          '<div class="gcell s-'+st+(p.regional?' rf':'')+'" data-id="'+p.id+
-          '" onclick="cycleStatus(\''+p.id+'\',event)" title="'+esc(p.name)+'">'+
+          '<div class="gcell s-'+st+(p.regional?' rf':'')+(friendHas?' fh':'')+'" data-id="'+p.id+
+          '" onclick="handleCellClick(\''+p.id+'\',event)" title="'+esc(p.name)+'">'+
+          (friendHas?'<span class="gfriend">♥</span>':'')+
           (illEx?'<span class="gill">★</span>':'')+
           '<span class="gdex">'+dnum+'</span>'+
           '<span class="gname">'+esc(p.name)+'</span>'+
           '</div>';
       }
       html+='</div>';
-    } else {
+    }else{
       for(const p of [...base,...rf]){
-        const st=gs(p.id).status,note=gs(p.id).note,illEx=gs(p.id).illEx;
+        const st=gs(p.id).status,note=gs(p.id).note,illEx=gs(p.id).illEx,friendHas=gs(p.id).friendHas;
         const open=openRows.has(p.id);
         const dnum=p.dex?'#'+String(p.dex).padStart(4,'0'):'';
         html+=
@@ -449,6 +549,7 @@ function render(){
           '<span class="pname">'+esc(p.name)+
             (p.regional?'<span class="rtag">'+p.regional+'</span>':'')+
             (illEx?'<span class="ill-dot">★</span>':'')+
+            (friendHas?'<span class="friend-dot">♥</span>':'')+
           '</span>'+
           '<button class="sbtn s-'+st+'" onclick="cycleStatus(\''+p.id+'\',event)">'+ICONS[st]+'</button>'+
           '</div>'+
@@ -457,6 +558,10 @@ function render(){
           '<label class="ill-ex-row">'+
             '<input type="checkbox" '+(illEx?'checked':'')+' onchange="toggleIllEx(\''+p.id+'\',this.checked)">'+
             ' Full art available'+
+          '</label>'+
+          '<label class="friend-row">'+
+            '<input class="friend-cb" type="checkbox" '+(friendHas?'checked':'')+' onchange="toggleFriendHas(\''+p.id+'\',this.checked)">'+
+            ' maybe don\'t buy :3'+
           '</label>'+
           '<textarea class="ninput" placeholder="Notes…" oninput="saveNote(\''+p.id+'\',this.value)">'+esc(note)+'</textarea>'+
           '</div></div></div>';
@@ -475,7 +580,7 @@ function toggleRow(id){
 }
 
 function exportData(){
-  const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});
+  const blob=new Blob([JSON.stringify(ownerState,null,2)],{type:'application/json'});
   const a=document.createElement('a');
   a.href=URL.createObjectURL(blob);
   a.download='data.json';
