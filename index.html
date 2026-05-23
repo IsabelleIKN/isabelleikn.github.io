@@ -112,6 +112,15 @@ body:not(.mode-owner) #export-btn{display:none}
 .gcell.s-missing .gname{color:rgba(0,0,0,.55)}
 .gill{position:absolute;top:3px;right:4px;font-size:9px;color:rgba(255,255,255,.75);line-height:1}
 .gcell.s-missing .gill{color:rgba(180,90,0,.65)}
+/* ── Upgrade indicator ── */
+.upgrade-dot{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:#2ec4b6;color:#fff;font-size:9px;font-weight:700;flex-shrink:0;vertical-align:middle}
+.upgrade-row{display:flex;align-items:center;gap:8px;padding-bottom:8px;font-size:13px;color:var(--text);cursor:pointer}
+.upgrade-row input{width:15px;height:15px;cursor:pointer;accent-color:#2ec4b6;flex-shrink:0}
+.gupgrade{position:absolute;top:3px;left:4px;font-size:9px;line-height:1}
+.gcell.s-missing .gupgrade{color:rgba(0,130,120,.7)}
+.gcell:not(.s-missing) .gupgrade{color:rgba(180,255,250,.9)}
+.gcell.up{outline:2px solid rgba(46,196,182,.7);outline-offset:-2px}
+.mode-readonly .upgrade-row{pointer-events:none;cursor:default}
 </style>
 </head>
 <body>
@@ -122,6 +131,7 @@ body:not(.mode-owner) #export-btn{display:none}
     <span>Have: <b id="st-hav">0</b></span>
     <span>★ <b id="st-ill">0</b> / <b id="st-ill-ex">0</b> exist</span>
     <span>♥ <b id="st-friend">0</b></span>
+    <span>↑ <b id="st-upgrade">0</b></span>
   </div>
   <div id="mode-banner"></div>
 </div>
@@ -148,6 +158,8 @@ body:not(.mode-owner) #export-btn{display:none}
     <button class="fbtn" data-status="regular">Regular</button>
     <button class="fbtn" data-status="illustration">Illustration</button>
     <button class="fbtn" data-status="missing-ill">Missing ★</button>
+    <button class="fbtn" data-status="friend-has">♥ Friend has</button>
+    <button class="fbtn" data-status="upgrade">↑ Upgrade</button>
   </div>
   <div class="bottom-row">
     <div class="view-toggle">
@@ -354,8 +366,8 @@ for(const p of POKEMON){
 }
 
 function gs(id){
-  const o=ownerState[id]||{status:'missing',note:'',illEx:false};
-  return{...o,friendHas:!!friendState[id]};
+  const o=ownerState[id]||{status:'missing',note:'',illEx:false,upgradePossible:false};
+  return{status:'missing',note:'',illEx:false,upgradePossible:false,...o,friendHas:!!friendState[id]};
 }
 
 function cycleStatus(id,e){
@@ -422,6 +434,28 @@ function toggleFriendHas(id,val){
   saveFriendD();
 }
 
+function toggleUpgradePossible(id,val){
+  if(MODE==='readonly')return;
+  const cur=ownerState[id]||{status:'missing',note:'',illEx:false};
+  ownerState[id]={...cur,upgradePossible:!!val};
+  saveOwnerD();
+  const dot=document.querySelector('[data-id="'+id+'"] .upgrade-dot');
+  if(val&&!dot){
+    const pname=document.querySelector('[data-id="'+id+'"] .pname');
+    if(pname)pname.insertAdjacentHTML('beforeend','<span class="upgrade-dot">↑</span>');
+  }else if(!val&&dot){dot.remove();}
+  const cell=document.querySelector('.gcell[data-id="'+id+'"]');
+  if(cell){
+    cell.classList.toggle('up',!!val);
+    const gu=cell.querySelector('.gupgrade');
+    if(val&&!gu)cell.insertAdjacentHTML('afterbegin','<span class="gupgrade">↑</span>');
+    else if(!val&&gu)gu.remove();
+  }
+  const cb=document.querySelector('[data-id="'+id+'"] .upgrade-cb');
+  if(cb)cb.checked=!!val;
+  updateStats();
+}
+
 // ── Persistence ─────────────────────────────────────────────────────
 let _ownerTimer=null;
 function saveOwner(){
@@ -450,11 +484,13 @@ function updateStats(){
   const ill=POKEMON.filter(p=>gs(p.id).status==='illustration').length;
   const illEx=POKEMON.filter(p=>gs(p.id).illEx).length;
   const friendN=POKEMON.filter(p=>gs(p.id).friendHas).length;
+  const upgradeN=POKEMON.filter(p=>gs(p.id).upgradePossible).length;
   document.getElementById('st-tot').textContent=tot;
   document.getElementById('st-hav').textContent=hav;
   document.getElementById('st-ill').textContent=ill;
   document.getElementById('st-ill-ex').textContent=illEx;
   document.getElementById('st-friend').textContent=friendN;
+  document.getElementById('st-upgrade').textContent=upgradeN;
 }
 
 async function loadData(){
@@ -486,6 +522,8 @@ function matches(p){
   }
   if(activeGen!=='all'&&p.gen!==+activeGen)return false;
   if(activeStatus==='missing-ill')return gs(p.id).illEx&&gs(p.id).status!=='illustration';
+  if(activeStatus==='friend-has')return gs(p.id).friendHas;
+  if(activeStatus==='upgrade')return gs(p.id).upgradePossible;
   if(activeStatus!=='all'&&gs(p.id).status!==activeStatus)return false;
   return true;
 }
@@ -525,11 +563,12 @@ function render(){
     if(viewMode==='grid'){
       html+='<div class="gcells">';
       for(const p of [...base,...rf]){
-        const st=gs(p.id).status,illEx=gs(p.id).illEx,friendHas=gs(p.id).friendHas;
+        const st=gs(p.id).status,illEx=gs(p.id).illEx,friendHas=gs(p.id).friendHas,upgradePossible=gs(p.id).upgradePossible;
         const dnum=p.dex?'#'+String(p.dex).padStart(4,'0'):'';
         html+=
-          '<div class="gcell s-'+st+(p.regional?' rf':'')+(friendHas?' fh':'')+'" data-id="'+p.id+
+          '<div class="gcell s-'+st+(p.regional?' rf':'')+(friendHas?' fh':'')+(upgradePossible?' up':'')+'" data-id="'+p.id+
           '" onclick="handleCellClick(\''+p.id+'\',event)" title="'+esc(p.name)+'">'+
+          (upgradePossible?'<span class="gupgrade">↑</span>':'')+
           (friendHas?'<span class="gfriend">♥</span>':'')+
           (illEx?'<span class="gill">★</span>':'')+
           '<span class="gdex">'+dnum+'</span>'+
@@ -539,7 +578,7 @@ function render(){
       html+='</div>';
     }else{
       for(const p of [...base,...rf]){
-        const st=gs(p.id).status,note=gs(p.id).note,illEx=gs(p.id).illEx,friendHas=gs(p.id).friendHas;
+        const st=gs(p.id).status,note=gs(p.id).note,illEx=gs(p.id).illEx,friendHas=gs(p.id).friendHas,upgradePossible=gs(p.id).upgradePossible;
         const open=openRows.has(p.id);
         const dnum=p.dex?'#'+String(p.dex).padStart(4,'0'):'';
         html+=
@@ -550,6 +589,7 @@ function render(){
             (p.regional?'<span class="rtag">'+p.regional+'</span>':'')+
             (illEx?'<span class="ill-dot">★</span>':'')+
             (friendHas?'<span class="friend-dot">♥</span>':'')+
+            (upgradePossible?'<span class="upgrade-dot">↑</span>':'')+
           '</span>'+
           '<button class="sbtn s-'+st+'" onclick="cycleStatus(\''+p.id+'\',event)">'+ICONS[st]+'</button>'+
           '</div>'+
@@ -562,6 +602,10 @@ function render(){
           '<label class="friend-row">'+
             '<input class="friend-cb" type="checkbox" '+(friendHas?'checked':'')+' onchange="toggleFriendHas(\''+p.id+'\',this.checked)">'+
             ' maybe don\'t buy :3'+
+          '</label>'+
+          '<label class="upgrade-row">'+
+            '<input class="upgrade-cb" type="checkbox" '+(upgradePossible?'checked':'')+' onchange="toggleUpgradePossible(\''+p.id+'\',this.checked)">'+
+            ' upgrade possible'+
           '</label>'+
           '<textarea class="ninput" placeholder="Notes…" oninput="saveNote(\''+p.id+'\',this.value)">'+esc(note)+'</textarea>'+
           '</div></div></div>';
