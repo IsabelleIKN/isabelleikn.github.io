@@ -175,9 +175,10 @@ body:not(.mode-owner) #export-btn{display:none}
 <button id="top-btn" aria-label="Back to top">↑</button>
 <script>
 // ── Config ──────────────────────────────────────────────────────────
-const GH_API='https://pokedex.ikniestedt.workers.dev/';
-const GH_OWNER_FILE='data.json';
-const GH_FRIEND_FILE='friend-data.json';
+const BIN_OWNER='6a082ef6c0954111d82fe8b5';
+const BIN_FRIEND='6a082ed9250b1311c35ac41b';
+const AKEY='$2a$10$Qrbj8bNzfBOdqw4QSHfv1Op4rAUDoPxTX0Vyi/sucCE/JoOOSG6re';
+const API='https://api.jsonbin.io/v3/b/';
 const MODE=(()=>{const p=new URLSearchParams(location.search);return p.has('readonly')?'readonly':p.has('friend')?'friend':'owner';})();
 document.body.className='mode-'+MODE;
 {
@@ -340,7 +341,6 @@ const STATUSES=['missing','regular','illustration'];
 const ICONS={missing:'–',regular:'●',illustration:'★'};
 let ownerState={};
 let friendState={};
-let ownerSha=null,friendSha=null;
 const openRows=new Set();
 let activeGen='all',activeStatus='all',sq='',viewMode='list';
 
@@ -462,53 +462,10 @@ function toggleUpgradePossible(id,val){
 let _ownerTimer=null,_friendTimer=null,_retryTimer=null;
 let dirtyOwner=false,dirtyFriend=false;
 
-// Unicode-safe base64 encode/decode for GitHub Contents API
-function b64e(obj){
-  const bytes=new TextEncoder().encode(JSON.stringify(obj));
-  let s='';for(const b of bytes)s+=String.fromCharCode(b);
-  return btoa(s);
-}
-function b64d(s){
-  const str=atob(s.replace(/\s/g,''));
-  const bytes=new Uint8Array(str.length);
-  for(let i=0;i<str.length;i++)bytes[i]=str.charCodeAt(i);
-  return JSON.parse(new TextDecoder().decode(bytes));
-}
-
-const GH_HEADERS={'Content-Type':'application/json'};
-
-// Returns new sha on success, null on sha conflict (caller should re-fetch sha and retry), throws on other errors
-async function ghPut(file,data,sha){
-  const body={message:'sync',content:b64e(data)};
-  if(sha)body.sha=sha;
-  const r=await fetch(GH_API+file,{method:'PUT',headers:{...GH_HEADERS,'Content-Type':'application/json'},body:JSON.stringify(body)});
-  if(r.status===409||r.status===422)return null;
-  if(!r.ok)throw new Error(r.status);
-  return (await r.json()).content.sha;
-}
-
-async function ghFetchSha(file){
-  const r=await fetch(GH_API+file,{headers:GH_HEADERS});
-  if(!r.ok)return null;
-  return (await r.json()).sha;
-}
-
-async function pushOwner(){
-  let sha=await ghPut(GH_OWNER_FILE,ownerState,ownerSha);
-  if(sha===null){ownerSha=await ghFetchSha(GH_OWNER_FILE);sha=await ghPut(GH_OWNER_FILE,ownerState,ownerSha);}
-  if(sha){ownerSha=sha;dirtyOwner=false;}else dirtyOwner=true;
-}
-
-async function pushFriend(){
-  let sha=await ghPut(GH_FRIEND_FILE,friendState,friendSha);
-  if(sha===null){friendSha=await ghFetchSha(GH_FRIEND_FILE);sha=await ghPut(GH_FRIEND_FILE,friendState,friendSha);}
-  if(sha){friendSha=sha;dirtyFriend=false;}else dirtyFriend=true;
-}
-
 function updateSyncBanner(){
   const down=dirtyOwner||dirtyFriend;
   const el=document.getElementById('sync-banner');
-  el.textContent=down?'⚠ GitHub sync offline — changes saved locally, will retry':'';
+  el.textContent=down?'⚠ JSONBin offline — changes saved locally, will retry':'';
   el.style.display=down?'block':'none';
   if(down&&!_retryTimer)_retryTimer=setInterval(retrySync,30000);
   if(!down&&_retryTimer){clearInterval(_retryTimer);_retryTimer=null;}
@@ -516,20 +473,30 @@ function updateSyncBanner(){
 
 async function retrySync(){
   const ps=[];
-  if(dirtyOwner)ps.push(pushOwner().catch(_=>{dirtyOwner=true;}));
-  if(dirtyFriend)ps.push(pushFriend().catch(_=>{dirtyFriend=true;}));
+  if(dirtyOwner)ps.push(
+    fetch(API+BIN_OWNER,{method:'PUT',headers:{'Content-Type':'application/json','X-Access-Key':AKEY},body:JSON.stringify(ownerState)})
+      .then(r=>{if(r.ok)dirtyOwner=false;}).catch(_=>_)
+  );
+  if(dirtyFriend)ps.push(
+    fetch(API+BIN_FRIEND,{method:'PUT',headers:{'Content-Type':'application/json','X-Access-Key':AKEY},body:JSON.stringify(friendState)})
+      .then(r=>{if(r.ok)dirtyFriend=false;}).catch(_=>_)
+  );
   await Promise.all(ps);
   updateSyncBanner();
 }
 
 function saveOwner(){
-  pushOwner().catch(_=>{dirtyOwner=true;}).finally(updateSyncBanner);
+  fetch(API+BIN_OWNER,{method:'PUT',headers:{'Content-Type':'application/json','X-Access-Key':AKEY},body:JSON.stringify(ownerState)})
+    .then(r=>{dirtyOwner=!r.ok;updateSyncBanner();})
+    .catch(_=>{dirtyOwner=true;updateSyncBanner();});
   try{localStorage.setItem('pkdx-binder',JSON.stringify(ownerState));}catch(_){}
 }
 function saveOwnerD(){clearTimeout(_ownerTimer);_ownerTimer=setTimeout(saveOwner,800);}
 
 function saveFriend(){
-  pushFriend().catch(_=>{dirtyFriend=true;}).finally(updateSyncBanner);
+  fetch(API+BIN_FRIEND,{method:'PUT',headers:{'Content-Type':'application/json','X-Access-Key':AKEY},body:JSON.stringify(friendState)})
+    .then(r=>{dirtyFriend=!r.ok;updateSyncBanner();})
+    .catch(_=>{dirtyFriend=true;updateSyncBanner();});
   try{localStorage.setItem('pkdx-friend',JSON.stringify(friendState));}catch(_){}
 }
 function saveFriendD(){clearTimeout(_friendTimer);_friendTimer=setTimeout(saveFriend,500);}
@@ -552,22 +519,22 @@ function updateStats(){
 async function loadData(){
   try{
     const [or,fr]=await Promise.all([
-      fetch(GH_API+GH_OWNER_FILE,{headers:GH_HEADERS}),
-      fetch(GH_API+GH_FRIEND_FILE,{headers:GH_HEADERS})
+      fetch(API+BIN_OWNER+'/latest',{headers:{'X-Access-Key':AKEY}}),
+      fetch(API+BIN_FRIEND+'/latest',{headers:{'X-Access-Key':AKEY}})
     ]);
-    if(or.ok){const d=await or.json();ownerSha=d.sha;ownerState=b64d(d.content);}
-    else{try{const s=localStorage.getItem('pkdx-binder');if(s)ownerState=JSON.parse(s);}catch(_){}}
+    if(or.ok){const d=await or.json();ownerState=d.record||{};}
+    else{try{const s=localStorage.getItem('pkdx-binder');if(s){ownerState=JSON.parse(s);dirtyOwner=true;}}catch(_){}}
     if(fr.ok){
-      const d=await fr.json();friendSha=d.sha;
-      const raw=b64d(d.content);
+      const d=await fr.json();
+      const raw=d.record||{};
       friendState={};
       for(const[k,v]of Object.entries(raw)){if(typeof v==='boolean')friendState[k]=v;}
     }else{
-      try{const s=localStorage.getItem('pkdx-friend');if(s)friendState=JSON.parse(s);}catch(_){}
+      try{const s=localStorage.getItem('pkdx-friend');if(s){friendState=JSON.parse(s);dirtyFriend=true;}}catch(_){}
     }
   }catch(_){
-    try{const s=localStorage.getItem('pkdx-binder');if(s)ownerState=JSON.parse(s);}catch(_){}
-    try{const s=localStorage.getItem('pkdx-friend');if(s)friendState=JSON.parse(s);}catch(_){}
+    try{const s=localStorage.getItem('pkdx-binder');if(s){ownerState=JSON.parse(s);dirtyOwner=true;}}catch(_){}
+    try{const s=localStorage.getItem('pkdx-friend');if(s){friendState=JSON.parse(s);dirtyFriend=true;}}catch(_){}
   }
   render();
 }
