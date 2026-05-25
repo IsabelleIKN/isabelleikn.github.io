@@ -175,8 +175,7 @@ body:not(.mode-owner) #export-btn{display:none}
 <button id="top-btn" aria-label="Back to top">↑</button>
 <script>
 // ── Config ──────────────────────────────────────────────────────────
-const GH_TOKEN='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';
-const GH_API='https://api.github.com/repos/IsabelleIKN/isabelleikn.github.io/contents/';
+const GH_API='https://pokedex.ikniestedt.workers.dev/';
 const GH_OWNER_FILE='data.json';
 const GH_FRIEND_FILE='friend-data.json';
 const MODE=(()=>{const p=new URLSearchParams(location.search);return p.has('readonly')?'readonly':p.has('friend')?'friend':'owner';})();
@@ -476,7 +475,7 @@ function b64d(s){
   return JSON.parse(new TextDecoder().decode(bytes));
 }
 
-const GH_HEADERS={'Authorization':'Bearer '+GH_TOKEN,'Accept':'application/vnd.github+json'};
+const GH_HEADERS={'Content-Type':'application/json'};
 
 // Returns new sha on success, null on sha conflict (caller should re-fetch sha and retry), throws on other errors
 async function ghPut(file,data,sha){

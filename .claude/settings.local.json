@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(git -C /Users/dandy/GitHub/isabelleikn.github.io status)",
-      "Bash(git -C /Users/dandy/GitHub/isabelleikn.github.io branch)"
+      "Bash(git -C /Users/dandy/GitHub/isabelleikn.github.io branch)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' -H 'Authorization: Bearer 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' -H 'Accept: application/vnd.github+json' https://api.github.com/repos/IsabelleIKN/isabelleikn.github.io/contents/data.json)"
     ]
   }
 }
