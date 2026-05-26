@@ -517,6 +517,8 @@ function updateStats(){
 }
 
 async function loadData(){
+  const el=document.getElementById('sync-banner');
+  el.textContent='Connecting to JSONBin…';el.style.display='block';
   try{
     const [or,fr]=await Promise.all([
       fetch(API+BIN_OWNER+'/latest',{headers:{'X-Access-Key':AKEY}}),
@@ -537,6 +539,7 @@ async function loadData(){
     try{const s=localStorage.getItem('pkdx-friend');if(s){friendState=JSON.parse(s);dirtyFriend=true;}}catch(_){}
   }
   render();
+  updateSyncBanner();
 }
 
 function matches(p){
