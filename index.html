@@ -175,10 +175,7 @@ body:not(.mode-owner) #export-btn{display:none}
 <button id="top-btn" aria-label="Back to top">↑</button>
 <script>
 // ── Config ──────────────────────────────────────────────────────────
-const BIN_OWNER='6a082ef6c0954111d82fe8b5';
-const BIN_FRIEND='6a082ed9250b1311c35ac41b';
-const AKEY='$2a$10$Qrbj8bNzfBOdqw4QSHfv1Op4rAUDoPxTX0Vyi/sucCE/JoOOSG6re';
-const API='https://api.jsonbin.io/v3/b/';
+const FB='https://pokedex-cdda8-default-rtdb.europe-west1.firebasedatabase.app';
 const MODE=(()=>{const p=new URLSearchParams(location.search);return p.has('readonly')?'readonly':p.has('friend')?'friend':'owner';})();
 document.body.className='mode-'+MODE;
 {
@@ -465,7 +462,7 @@ let dirtyOwner=false,dirtyFriend=false;
 function updateSyncBanner(){
   const down=dirtyOwner||dirtyFriend;
   const el=document.getElementById('sync-banner');
-  el.textContent=down?'⚠ JSONBin offline — changes saved locally, will retry':'';
+  el.textContent=down?'⚠ Firebase offline — changes saved locally, will retry':'';
   el.style.display=down?'block':'none';
   if(down&&!_retryTimer)_retryTimer=setInterval(retrySync,30000);
   if(!down&&_retryTimer){clearInterval(_retryTimer);_retryTimer=null;}
@@ -474,11 +471,11 @@ function updateSyncBanner(){
 async function retrySync(){
   const ps=[];
   if(dirtyOwner)ps.push(
-    fetch(API+BIN_OWNER,{method:'PUT',headers:{'Content-Type':'application/json','X-Access-Key':AKEY},body:JSON.stringify(ownerState)})
+    fetch(FB+'/owner.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(ownerState)})
       .then(r=>{if(r.ok)dirtyOwner=false;}).catch(_=>_)
   );
   if(dirtyFriend)ps.push(
-    fetch(API+BIN_FRIEND,{method:'PUT',headers:{'Content-Type':'application/json','X-Access-Key':AKEY},body:JSON.stringify(friendState)})
+    fetch(FB+'/friend.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(friendState)})
       .then(r=>{if(r.ok)dirtyFriend=false;}).catch(_=>_)
   );
   await Promise.all(ps);
@@ -486,7 +483,7 @@ async function retrySync(){
 }
 
 function saveOwner(){
-  fetch(API+BIN_OWNER,{method:'PUT',headers:{'Content-Type':'application/json','X-Access-Key':AKEY},body:JSON.stringify(ownerState)})
+  fetch(FB+'/owner.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(ownerState)})
     .then(r=>{dirtyOwner=!r.ok;updateSyncBanner();})
     .catch(_=>{dirtyOwner=true;updateSyncBanner();});
   try{localStorage.setItem('pkdx-binder',JSON.stringify(ownerState));}catch(_){}
@@ -494,7 +491,7 @@ function saveOwner(){
 function saveOwnerD(){clearTimeout(_ownerTimer);_ownerTimer=setTimeout(saveOwner,800);}
 
 function saveFriend(){
-  fetch(API+BIN_FRIEND,{method:'PUT',headers:{'Content-Type':'application/json','X-Access-Key':AKEY},body:JSON.stringify(friendState)})
+  fetch(FB+'/friend.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(friendState)})
     .then(r=>{dirtyFriend=!r.ok;updateSyncBanner();})
     .catch(_=>{dirtyFriend=true;updateSyncBanner();});
   try{localStorage.setItem('pkdx-friend',JSON.stringify(friendState));}catch(_){}
@@ -518,17 +515,17 @@ function updateStats(){
 
 async function loadData(){
   const el=document.getElementById('sync-banner');
-  el.textContent='Connecting to JSONBin…';el.style.display='block';
+  el.textContent='Connecting to Firebase…';el.style.display='block';
   try{
     const [or,fr]=await Promise.all([
-      fetch(API+BIN_OWNER+'/latest',{headers:{'X-Access-Key':AKEY}}),
-      fetch(API+BIN_FRIEND+'/latest',{headers:{'X-Access-Key':AKEY}})
+      fetch(FB+'/owner.json'),
+      fetch(FB+'/friend.json')
     ]);
-    if(or.ok){const d=await or.json();ownerState=d.record||{};}
+    if(or.ok){const d=await or.json();ownerState=d||{};}
     else{try{const s=localStorage.getItem('pkdx-binder');if(s){ownerState=JSON.parse(s);dirtyOwner=true;}}catch(_){}}
     if(fr.ok){
       const d=await fr.json();
-      const raw=d.record||{};
+      const raw=d||{};
       friendState={};
       for(const[k,v]of Object.entries(raw)){if(typeof v==='boolean')friendState[k]=v;}
     }else{
@@ -653,10 +650,10 @@ function toggleRow(id){
 }
 
 function exportData(){
-  const blob=new Blob([JSON.stringify(ownerState,null,2)],{type:'application/json'});
+  const blob=new Blob([JSON.stringify({owner:ownerState,friend:friendState},null,2)],{type:'application/json'});
   const a=document.createElement('a');
   a.href=URL.createObjectURL(blob);
-  a.download='data.json';
+  a.download='pokedex-backup.json';
   document.body.appendChild(a);a.click();
   document.body.removeChild(a);
   setTimeout(()=>URL.revokeObjectURL(a.href),1000);
