@@ -496,9 +496,11 @@ function updateSyncBanner(){
 
 async function retrySync(){
   const ps=[];
-  if(dirtyOwner)ps.push(
-    fetch(FB+'/owner.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(ownerState)})
-      .then(r=>{if(r.ok)dirtyOwner=false;}).catch(_=>_)
+  if(dirtyOwner&&currentUser)ps.push(
+    currentUser.getIdToken().then(tok=>
+      fetch(FB+'/owner.json?auth='+tok,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(ownerState)})
+        .then(r=>{if(r.ok)dirtyOwner=false;})
+    ).catch(_=>_)
   );
   if(dirtyFriend)ps.push(
     fetch(FB+'/friend.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(friendState)})
@@ -510,9 +512,11 @@ async function retrySync(){
 
 function saveOwner(){
   if(MODE==='owner'&&!currentUser)return;
-  fetch(FB+'/owner.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(ownerState)})
-    .then(r=>{dirtyOwner=!r.ok;updateSyncBanner();})
-    .catch(_=>{dirtyOwner=true;updateSyncBanner();});
+  currentUser.getIdToken().then(tok=>
+    fetch(FB+'/owner.json?auth='+tok,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(ownerState)})
+      .then(r=>{dirtyOwner=!r.ok;updateSyncBanner();})
+      .catch(_=>{dirtyOwner=true;updateSyncBanner();})
+  );
   try{localStorage.setItem('pkdx-binder',JSON.stringify(ownerState));}catch(_){}
 }
 function saveOwnerD(){clearTimeout(_ownerTimer);_ownerTimer=setTimeout(saveOwner,800);}
