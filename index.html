@@ -127,6 +127,13 @@ body:not(.mode-owner) #export-btn{display:none}
 .gcell:not(.s-missing) .gupgrade{color:rgba(180,255,250,.9)}
 .gcell.up{outline:2px solid rgba(46,196,182,.7);outline-offset:-2px}
 .mode-readonly .upgrade-row{pointer-events:none;cursor:default}
+/* ── Foreign language ── */
+.lang-flag{font-size:13px;flex-shrink:0;vertical-align:middle;line-height:1}
+.lang-select{padding:4px 6px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:#fff;cursor:pointer;outline:none;width:100%;margin-bottom:8px}
+.lang-select:focus{border-color:#aaa}
+.glang{position:absolute;bottom:3px;right:4px;font-size:11px;line-height:1}
+body:not(.mode-owner) .lang-select{pointer-events:none;opacity:.7}
+.mode-readonly .lang-select{pointer-events:none;opacity:.7}
 </style>
 </head>
 <body>
@@ -138,6 +145,7 @@ body:not(.mode-owner) #export-btn{display:none}
     <span>★ <b id="st-ill">0</b> / <b id="st-ill-ex">0</b> exist</span>
     <span>♥ <b id="st-friend">0</b></span>
     <span>↑ <b id="st-upgrade">0</b></span>
+    <span>🌐 <b id="st-lang">0</b></span>
   </div>
   <div id="mode-banner"></div>
   <div id="sync-banner"></div>
@@ -168,6 +176,7 @@ body:not(.mode-owner) #export-btn{display:none}
     <button class="fbtn" data-status="missing-ill">Missing ★</button>
     <button class="fbtn" data-status="friend-has">♥ Friend has</button>
     <button class="fbtn" data-status="upgrade">↑ Upgrade</button>
+    <button class="fbtn" data-status="foreign">🌐 Foreign lang</button>
   </div>
   <div class="bottom-row">
     <div class="view-toggle">
@@ -359,6 +368,16 @@ const ROSTER=[
 [1024,"Terapagos",9],[1025,"Pecharunt",9],
 ];
 
+// ── Language config ──────────────────────────────────────────────────
+const LANGS={
+  it:{flag:'🇮🇹',label:'Italian'},
+  de:{flag:'🇩🇪',label:'German'},
+  ko:{flag:'🇰🇷',label:'Korean'},
+  ja:{flag:'🇯🇵',label:'Japanese'},
+  nl:{flag:'🇳🇱',label:'Dutch'},
+  zh:{flag:'🇨🇳',label:'Chinese'},
+};
+
 // ── State & helpers ─────────────────────────────────────────────────
 const STATUSES=['missing','regular','illustration'];
 const ICONS={missing:'–',regular:'●',illustration:'★'};
@@ -391,8 +410,32 @@ for(const p of POKEMON){
 }
 
 function gs(id){
-  const o=ownerState[id]||{status:'missing',note:'',illEx:false,upgradePossible:false};
-  return{status:'missing',note:'',illEx:false,upgradePossible:false,...o,friendHas:!!friendState[id]};
+  const o=ownerState[id]||{status:'missing',note:'',illEx:false,upgradePossible:false,language:''};
+  return{status:'missing',note:'',illEx:false,upgradePossible:false,language:'',...o,friendHas:!!friendState[id]};
+}
+
+function setLanguage(id,val){
+  if(MODE==='readonly')return;
+  const cur=ownerState[id]||{status:'missing',note:'',illEx:false};
+  ownerState[id]={...cur,language:val||''};
+  saveOwnerD();
+  const flag=val&&LANGS[val]?LANGS[val].flag:'';
+  // update flag in list row
+  const existFlag=document.querySelector('[data-id="'+id+'"] .lang-flag');
+  if(flag&&!existFlag){
+    const pname=document.querySelector('[data-id="'+id+'"] .pname');
+    if(pname)pname.insertAdjacentHTML('beforeend','<span class="lang-flag">'+flag+'</span>');
+  }else if(flag&&existFlag){existFlag.textContent=flag;}
+  else if(!flag&&existFlag){existFlag.remove();}
+  // update flag in grid cell
+  const cell=document.querySelector('.gcell[data-id="'+id+'"]');
+  if(cell){
+    const gl=cell.querySelector('.glang');
+    if(flag&&!gl)cell.insertAdjacentHTML('beforeend','<span class="glang">'+flag+'</span>');
+    else if(flag&&gl)gl.textContent=flag;
+    else if(!flag&&gl)gl.remove();
+  }
+  updateStats();
 }
 
 function cycleStatus(id,e){
@@ -536,12 +579,14 @@ function updateStats(){
   const illEx=POKEMON.filter(p=>gs(p.id).illEx).length;
   const friendN=POKEMON.filter(p=>gs(p.id).friendHas).length;
   const upgradeN=POKEMON.filter(p=>gs(p.id).upgradePossible).length;
+  const langN=POKEMON.filter(p=>!!gs(p.id).language).length;
   document.getElementById('st-tot').textContent=tot;
   document.getElementById('st-hav').textContent=hav;
   document.getElementById('st-ill').textContent=ill;
   document.getElementById('st-ill-ex').textContent=illEx;
   document.getElementById('st-friend').textContent=friendN;
   document.getElementById('st-upgrade').textContent=upgradeN;
+  document.getElementById('st-lang').textContent=langN;
 }
 
 async function loadData(){
@@ -581,6 +626,7 @@ function matches(p){
   if(activeStatus==='missing-ill')return gs(p.id).illEx&&gs(p.id).status!=='illustration';
   if(activeStatus==='friend-has')return gs(p.id).friendHas;
   if(activeStatus==='upgrade')return gs(p.id).upgradePossible;
+  if(activeStatus==='foreign')return!!gs(p.id).language;
   if(activeStatus!=='all'&&gs(p.id).status!==activeStatus)return false;
   return true;
 }
@@ -620,22 +666,24 @@ function render(){
     if(viewMode==='grid'){
       html+='<div class="gcells">';
       for(const p of [...base,...rf]){
-        const st=gs(p.id).status,illEx=gs(p.id).illEx,friendHas=gs(p.id).friendHas,upgradePossible=gs(p.id).upgradePossible;
+        const st=gs(p.id).status,illEx=gs(p.id).illEx,friendHas=gs(p.id).friendHas,upgradePossible=gs(p.id).upgradePossible,language=gs(p.id).language;
+        const langFlag=language&&LANGS[language]?LANGS[language].flag:'';
         const dnum=p.dex?'#'+String(p.dex).padStart(4,'0'):'';
         html+=
           '<div class="gcell s-'+st+(p.regional?' rf':'')+(friendHas?' fh':'')+(upgradePossible?' up':'')+'" data-id="'+p.id+
-          '" onclick="handleCellClick(\''+p.id+'\',event)" title="'+esc(p.name)+'">'+
+          '" onclick="handleCellClick(\''+p.id+'\',event)" title="'+esc(p.name)+(langFlag?' ('+LANGS[language].label+')':'')+'">' +
           (upgradePossible?'<span class="gupgrade">↑</span>':'')+
           (friendHas?'<span class="gfriend">♥</span>':'')+
           (illEx?'<span class="gill">★</span>':'')+
           '<span class="gdex">'+dnum+'</span>'+
           '<span class="gname">'+esc(p.name)+'</span>'+
+          (langFlag?'<span class="glang">'+langFlag+'</span>':'')+
           '</div>';
       }
       html+='</div>';
     }else{
       for(const p of [...base,...rf]){
-        const st=gs(p.id).status,note=gs(p.id).note,illEx=gs(p.id).illEx,friendHas=gs(p.id).friendHas,upgradePossible=gs(p.id).upgradePossible;
+        const st=gs(p.id).status,note=gs(p.id).note,illEx=gs(p.id).illEx,friendHas=gs(p.id).friendHas,upgradePossible=gs(p.id).upgradePossible,language=gs(p.id).language;
         const open=openRows.has(p.id);
         const dnum=p.dex?'#'+String(p.dex).padStart(4,'0'):'';
         html+=
@@ -647,6 +695,7 @@ function render(){
             (illEx?'<span class="ill-dot">★</span>':'')+
             (friendHas?'<span class="friend-dot">♥</span>':'')+
             (upgradePossible?'<span class="upgrade-dot">↑</span>':'')+
+            (language&&LANGS[language]?'<span class="lang-flag">'+LANGS[language].flag+'</span>':'')+
           '</span>'+
           '<button class="sbtn s-'+st+'" onclick="cycleStatus(\''+p.id+'\',event)">'+ICONS[st]+'</button>'+
           '</div>'+
@@ -664,6 +713,10 @@ function render(){
             '<input class="upgrade-cb" type="checkbox" '+(upgradePossible?'checked':'')+' onchange="toggleUpgradePossible(\''+p.id+'\',this.checked)">'+
             ' upgrade possible'+
           '</label>'+
+          '<select class="lang-select" onchange="setLanguage(\''+p.id+'\',this.value)">'+
+            '<option value="" '+(language?'':'selected')+'>🏳 English (no flag)</option>'+
+            Object.entries(LANGS).map(([k,v])=>'<option value="'+k+'" '+(language===k?'selected':'')+'>'+v.flag+' '+v.label+'</option>').join('')+
+          '</select>'+
           '<textarea class="ninput" placeholder="Notes…" oninput="saveNote(\''+p.id+'\',this.value)">'+esc(note)+'</textarea>'+
           '</div></div></div>';
       }
